@@ -12,7 +12,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           src={project.hero.src}
           alt={project.hero.alt}
           loading="lazy"
-          className="aspect-[4/3] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+          className="aspect-video w-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.03]"
         />
       </div>
       <div className="mt-5">
