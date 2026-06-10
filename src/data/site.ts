@@ -8,6 +8,7 @@ export const site = {
   github: 'https://github.com/Atefe1986',
   linkedin: 'https://www.linkedin.com/in/atefeh-etemadipour/',
   resumePdf: asset('/atefeh-etemadipour-resume.pdf'),
+  logo: { src: asset('/images/logo.png'), alt: 'Atefeh Etemadipour logo' },
   hero: {
     title: 'Crafting User-Centered Digital Experiences',
     subtitle:

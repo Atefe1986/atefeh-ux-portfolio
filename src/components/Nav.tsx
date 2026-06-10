@@ -16,9 +16,10 @@ export default function Nav() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link
           to="/"
-          className="font-display text-lg font-semibold tracking-tight hover:text-accent"
+          className="flex items-center gap-2.5 font-display text-lg font-semibold tracking-tight hover:text-accent"
           onClick={() => setOpen(false)}
         >
+          <img src={site.logo.src} alt={site.logo.alt} className="h-8 w-8" />
           {site.name}
         </Link>
 

@@ -5,7 +5,10 @@ export default function Footer() {
     <footer className="border-t border-line print:hidden">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-12 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="font-display text-lg font-semibold">{site.name}</p>
+          <div className="flex items-center gap-2.5">
+            <img src={site.logo.src} alt={site.logo.alt} className="h-8 w-8" />
+            <p className="font-display text-lg font-semibold">{site.name}</p>
+          </div>
           <p className="mt-1 text-sm text-ink-faint">
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
