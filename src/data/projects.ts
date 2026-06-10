@@ -1,3 +1,5 @@
+import { asset } from '../lib/asset'
+
 export interface ProjectImage {
   src: string
   alt: string
@@ -35,7 +37,7 @@ export const projects: Project[] = [
     category: 'Mobile App · UX Case Study',
     summary:
       'A detailed case study of an app that centralizes parent–preschool communication, from research and user segmentation to tested, iterated high-fidelity screens.',
-    hero: { src: '/images/kiddolink-hero.png', alt: 'Kiddolink app screens overview' },
+    hero: { src: asset('/images/kiddolink-hero.png'), alt: 'Kiddolink app screens overview' },
     sections: [
       {
         kicker: 'Overview',
@@ -44,7 +46,7 @@ export const projects: Project[] = [
           'The UX process for Kiddolink followed an iterative, user-centered approach structured around agile sprints. Since the app was designed for both preschool staff and parents, it was important to consider their distinct communication behaviours and pain points.',
         ],
         images: [
-          { src: '/images/kiddolink-ux-process.png', alt: 'Kiddolink UX process overview' },
+          { src: asset('/images/kiddolink-ux-process.png'), alt: 'Kiddolink UX process overview' },
         ],
       },
       {
@@ -70,7 +72,7 @@ export const projects: Project[] = [
         ],
         images: [
           {
-            src: '/images/kiddolink-interview-table.png',
+            src: asset('/images/kiddolink-interview-table.png'),
             alt: 'Overview table of interview participants, their roles, motivations and challenges',
           },
         ],
@@ -85,7 +87,7 @@ export const projects: Project[] = [
         ],
         images: [
           {
-            src: '/images/kiddolink-user-insights.png',
+            src: asset('/images/kiddolink-user-insights.png'),
             alt: 'Key user insights that shaped the Kiddolink MVP',
           },
         ],
@@ -97,8 +99,8 @@ export const projects: Project[] = [
           'The Kiddolink prototype evolved from wireframes designed to reflect the needs of busy and communicative parents. Each screen focused on intuitive navigation, visual hierarchy, and responsive design.',
         ],
         images: [
-          { src: '/images/kiddolink-wireframes-1.png', alt: 'Kiddolink wireframes — first set' },
-          { src: '/images/kiddolink-wireframes-2.png', alt: 'Kiddolink wireframes — second set' },
+          { src: asset('/images/kiddolink-wireframes-1.png'), alt: 'Kiddolink wireframes — first set' },
+          { src: asset('/images/kiddolink-wireframes-2.png'), alt: 'Kiddolink wireframes — second set' },
         ],
       },
       {
@@ -109,7 +111,7 @@ export const projects: Project[] = [
         ],
         images: [
           {
-            src: '/images/kiddolink-hifi-screens.png',
+            src: asset('/images/kiddolink-hifi-screens.png'),
             alt: 'Kiddolink high-fidelity UI screens',
           },
         ],
@@ -122,7 +124,7 @@ export const projects: Project[] = [
           'Through observation and screen recording, we identified areas of friction in navigation, communication clarity, and flow logic. The feedback directly informed design iterations.',
         ],
         images: [
-          { src: '/images/kiddolink-testing.png', alt: 'Usability testing sessions for Kiddolink' },
+          { src: asset('/images/kiddolink-testing.png'), alt: 'Usability testing sessions for Kiddolink' },
         ],
       },
       {
@@ -142,7 +144,7 @@ export const projects: Project[] = [
         ],
         images: [
           {
-            src: '/images/kiddolink-test-iterations.png',
+            src: asset('/images/kiddolink-test-iterations.png'),
             alt: 'Before-and-after design iterations from usability testing',
           },
         ],
@@ -158,7 +160,7 @@ export const projects: Project[] = [
     category: 'E-Commerce · UX Case Study',
     summary:
       'A responsive e-commerce platform for modern lighting, designed around effortless product discovery, side-by-side comparison, and in-home visualization.',
-    hero: { src: '/images/luminova-hero.png', alt: 'Luminova e-commerce website screens' },
+    hero: { src: asset('/images/luminova-hero.png'), alt: 'Luminova e-commerce website screens' },
     sections: [
       {
         kicker: 'Overview',
@@ -167,7 +169,7 @@ export const projects: Project[] = [
           'The UX process for Luminova focused on a user-centered, iterative approach aimed at modern homeowners and interior designers. Since the platform was built as a responsive e-commerce website for lighting and chandeliers, the process emphasized efficient product discovery, comparison, and visualization to address users’ key frustrations and needs.',
         ],
         images: [
-          { src: '/images/luminova-ux-process.png', alt: 'Luminova UX process overview' },
+          { src: asset('/images/luminova-ux-process.png'), alt: 'Luminova UX process overview' },
         ],
       },
       {
@@ -194,7 +196,7 @@ export const projects: Project[] = [
         ],
         images: [
           {
-            src: '/images/luminova-interview-overview.png',
+            src: asset('/images/luminova-interview-overview.png'),
             alt: 'Overview of interview participants for Luminova research',
           },
         ],
@@ -217,9 +219,9 @@ export const projects: Project[] = [
           'These solutions directly addressed our users’ frustrations. By implementing filtering, comparison, and visualization, Luminova streamlined the shopping process, reduced decision-making time, and provided a more engaging and trustworthy shopping experience.',
         ],
         images: [
-          { src: '/images/luminova-wireframe-1.png', alt: 'Luminova wireframe — filtering' },
-          { src: '/images/luminova-wireframe-2.png', alt: 'Luminova wireframe — comparison' },
-          { src: '/images/luminova-wireframe-3.png', alt: 'Luminova wireframe — visualization' },
+          { src: asset('/images/luminova-wireframe-1.png'), alt: 'Luminova wireframe — filtering' },
+          { src: asset('/images/luminova-wireframe-2.png'), alt: 'Luminova wireframe — comparison' },
+          { src: asset('/images/luminova-wireframe-3.png'), alt: 'Luminova wireframe — visualization' },
         ],
       },
       {
@@ -231,7 +233,7 @@ export const projects: Project[] = [
         ],
         images: [
           {
-            src: '/images/luminova-design-solutions.png',
+            src: asset('/images/luminova-design-solutions.png'),
             alt: 'Luminova design solutions evolved from wireframes',
           },
         ],
@@ -243,9 +245,9 @@ export const projects: Project[] = [
           'These screens showcase the final visual design of Luminova — combining modern aesthetics, a minimalist design system, and responsive layouts. The filtering, comparison, and visualization features are fully integrated, creating a seamless e-commerce experience for lighting and chandeliers.',
         ],
         images: [
-          { src: '/images/luminova-hifi-1.png', alt: 'Luminova high-fidelity screens — set one' },
-          { src: '/images/luminova-hifi-2.png', alt: 'Luminova high-fidelity screens — set two' },
-          { src: '/images/luminova-hifi-3.png', alt: 'Luminova high-fidelity screens — set three' },
+          { src: asset('/images/luminova-hifi-1.png'), alt: 'Luminova high-fidelity screens — set one' },
+          { src: asset('/images/luminova-hifi-2.png'), alt: 'Luminova high-fidelity screens — set two' },
+          { src: asset('/images/luminova-hifi-3.png'), alt: 'Luminova high-fidelity screens — set three' },
         ],
       },
     ],
@@ -258,7 +260,7 @@ export const projects: Project[] = [
     category: 'Landing Page · Design & Development',
     summary:
       'Design and development of a landing page for a Kenyan gig-economy platform, focused on simplicity, trust, and accessibility.',
-    hero: { src: '/images/kazify-hero.png', alt: 'Kazify landing page design' },
+    hero: { src: asset('/images/kazify-hero.png'), alt: 'Kazify landing page design' },
     liveDemo: 'https://kazify-web.pages.dev',
     sections: [
       {
@@ -268,8 +270,8 @@ export const projects: Project[] = [
           'Kazify is a gig-economy platform for the Kenyan market. I designed and developed a landing page focused on simplicity, trust, and accessibility — making it straightforward for users to understand the service and feel confident getting started.',
         ],
         images: [
-          { src: '/images/kazify-screens-2.png', alt: 'Kazify landing page sections' },
-          { src: '/images/kazify-screens-3.png', alt: 'Kazify landing page detail views' },
+          { src: asset('/images/kazify-screens-2.png'), alt: 'Kazify landing page sections' },
+          { src: asset('/images/kazify-screens-3.png'), alt: 'Kazify landing page detail views' },
         ],
       },
     ],

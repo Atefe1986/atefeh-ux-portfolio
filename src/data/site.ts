@@ -1,3 +1,5 @@
+import { asset } from '../lib/asset'
+
 export const site = {
   name: 'Atefeh Etemadipour',
   role: 'UX/UI Designer',
@@ -5,7 +7,7 @@ export const site = {
   email: 'atefeh.etemadipour@gmail.com',
   github: 'https://github.com/Atefe1986',
   linkedin: 'https://www.linkedin.com/in/atefeh-etemadipour/',
-  resumePdf: '/atefeh-etemadipour-resume.pdf',
+  resumePdf: asset('/atefeh-etemadipour-resume.pdf'),
   hero: {
     title: 'Crafting User-Centered Digital Experiences',
     subtitle:
@@ -29,7 +31,7 @@ export const site = {
     },
   ],
   about: {
-    portrait: { src: '/images/about-portrait.png', alt: 'Portrait of Atefeh Etemadipour' },
+    portrait: { src: asset('/images/about-portrait.png'), alt: 'Portrait of Atefeh Etemadipour' },
     paragraphs: [
       "I'm a UX/UI designer based in Stockholm with a background in industrial engineering and over four years of experience in sales and customer relations. This combination allows me to approach design with both analytical thinking and a deep understanding of user needs, business goals, and customer behavior.",
       'My journey into UX started with a passion for problem-solving and creating intuitive, user-centered digital experiences. Since then, I’ve worked on a range of real-world and academic projects, including designing and developing landing pages and digital platforms, where I focused on clarity, accessibility, and creating low-friction user experiences.',
