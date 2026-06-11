@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import type { Project } from '../data/projects'
 
 export default function ProjectCard({ project }: { project: Project }) {
+  const isCaseStudy = project.category.includes('Case Study')
   return (
     <Link
       to={`/work/${project.slug}`}
@@ -24,7 +25,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         </h3>
         <p className="mt-2 text-sm leading-relaxed text-ink-soft">{project.summary}</p>
         <p className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-accent">
-          View case study
+          {isCaseStudy ? 'View case study' : 'View project'}
           <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
             →
           </span>
