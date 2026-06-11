@@ -29,6 +29,30 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: 'kazify',
+    title: 'Kazify',
+    tagline: 'Landing Page Design & Development',
+    subtitle: 'A gig-economy platform for the Kenyan market.',
+    category: 'Landing Page · Design & Development',
+    summary:
+      'Design and development of a landing page for a Kenyan gig-economy platform, focused on simplicity, trust, and accessibility.',
+    hero: { src: asset('/images/kazify-hero.png'), alt: 'Kazify landing page design' },
+    liveDemo: 'https://kazify-web.pages.dev',
+    sections: [
+      {
+        kicker: 'Overview',
+        heading: 'Designing for simplicity and trust',
+        body: [
+          'Kazify is a gig-economy platform for the Kenyan market. I designed and developed a landing page focused on simplicity, trust, and accessibility — making it straightforward for users to understand the service and feel confident getting started.',
+        ],
+        images: [
+          { src: asset('/images/kazify-screens-2.png'), alt: 'Kazify landing page sections' },
+          { src: asset('/images/kazify-screens-3.png'), alt: 'Kazify landing page detail views' },
+        ],
+      },
+    ],
+  },
+  {
     slug: 'kiddolink',
     title: 'Kiddolink',
     tagline: 'All-in-One App for Parent–Preschool Communication',
@@ -248,30 +272,6 @@ export const projects: Project[] = [
           { src: asset('/images/luminova-hifi-1.png'), alt: 'Luminova high-fidelity screens — set one' },
           { src: asset('/images/luminova-hifi-2.png'), alt: 'Luminova high-fidelity screens — set two' },
           { src: asset('/images/luminova-hifi-3.png'), alt: 'Luminova high-fidelity screens — set three' },
-        ],
-      },
-    ],
-  },
-  {
-    slug: 'kazify',
-    title: 'Kazify',
-    tagline: 'Landing Page Design & Development',
-    subtitle: 'A gig-economy platform for the Kenyan market.',
-    category: 'Landing Page · Design & Development',
-    summary:
-      'Design and development of a landing page for a Kenyan gig-economy platform, focused on simplicity, trust, and accessibility.',
-    hero: { src: asset('/images/kazify-hero.png'), alt: 'Kazify landing page design' },
-    liveDemo: 'https://kazify-web.pages.dev',
-    sections: [
-      {
-        kicker: 'Overview',
-        heading: 'Designing for simplicity and trust',
-        body: [
-          'Kazify is a gig-economy platform for the Kenyan market. I designed and developed a landing page focused on simplicity, trust, and accessibility — making it straightforward for users to understand the service and feel confident getting started.',
-        ],
-        images: [
-          { src: asset('/images/kazify-screens-2.png'), alt: 'Kazify landing page sections' },
-          { src: asset('/images/kazify-screens-3.png'), alt: 'Kazify landing page detail views' },
         ],
       },
     ],
