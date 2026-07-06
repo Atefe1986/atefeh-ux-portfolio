@@ -229,7 +229,7 @@ export const projects: Project[] = [
         kicker: 'Website',
         heading: '10+ screens rebuilt on the system',
         body: [
-          'The redesigned website was the first proof of the system — every page below is composed entirely from library components and semantic tokens.',
+          'The redesigned website was the first proof of the system — service, about, article, and insights pages all composed entirely from library components and semantic tokens.',
         ],
         imageColumns: 2,
         images: [
@@ -237,10 +237,9 @@ export const projects: Project[] = [
             src: asset('/images/techlove-page-appdev.jpg'),
             alt: 'Techlove app development service page',
           },
-          { src: asset('/images/techlove-page-ux.jpg'), alt: 'Techlove UX design service page' },
+          { src: asset('/images/techlove-page-about.jpg'), alt: 'Techlove about us page' },
           { src: asset('/images/techlove-page-article.jpg'), alt: 'Techlove article page' },
           { src: asset('/images/techlove-page-blog.jpg'), alt: 'Techlove insights and blog page' },
-          { src: asset('/images/techlove-page-about.jpg'), alt: 'Techlove about us page' },
         ],
       },
       {
