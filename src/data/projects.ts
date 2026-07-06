@@ -252,20 +252,16 @@ export const projects: Project[] = [
         imageColumns: 3,
         images: [
           {
-            src: asset('/images/techlove-social-square.jpg'),
-            alt: 'Square social post — employee spotlight template',
+            src: asset('/images/techlove-social-story.jpg'),
+            alt: 'Story format post — dark template',
           },
           {
-            src: asset('/images/techlove-social-landscape.jpg'),
-            alt: 'Landscape social post — light variant',
+            src: asset('/images/techlove-social-portrait-dark.jpg'),
+            alt: 'Portrait post — dark template',
           },
           {
-            src: asset('/images/techlove-social-dark.jpg'),
-            alt: 'Landscape social post — dark variant',
-          },
-          {
-            src: asset('/images/techlove-social-canvas-square.jpg'),
-            alt: 'Template variants on the Figma canvas',
+            src: asset('/images/techlove-social-portrait-photo.jpg'),
+            alt: 'Portrait post — photo background template',
           },
           {
             src: asset('/images/techlove-video-live.jpg'),
