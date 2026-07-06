@@ -4,6 +4,9 @@ node_modules
 # Build output
 dist
 
+# Raw image sources (optimized copies live in public/images)
+/images
+
 # Logs
 logs
 *.log

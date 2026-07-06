@@ -5,6 +5,28 @@ export interface ProjectImage {
   alt: string
 }
 
+export interface ProjectMetric {
+  value: string
+  label: string
+}
+
+export interface TimelineStep {
+  phase: string
+  detail: string
+}
+
+export interface TokenFlowRow {
+  primitive: string
+  hex: string
+  semantic: string
+  usage: string
+}
+
+export interface ProjectFact {
+  label: string
+  value: string
+}
+
 export interface ProjectSection {
   kicker?: string
   heading: string
@@ -12,7 +34,11 @@ export interface ProjectSection {
   bullets?: string[]
   quote?: string
   outro?: string[]
+  metrics?: ProjectMetric[]
+  timeline?: TimelineStep[]
+  tokenFlow?: TokenFlowRow[]
   images?: ProjectImage[]
+  imageColumns?: 2 | 3
 }
 
 export interface Project {
@@ -24,10 +50,297 @@ export interface Project {
   summary: string
   hero: ProjectImage
   liveDemo?: string
+  facts?: ProjectFact[]
   sections: ProjectSection[]
 }
 
 export const projects: Project[] = [
+  {
+    slug: 'techlove',
+    title: 'Techlove',
+    tagline: 'A Design System That Unified a Digital Agency',
+    subtitle:
+      'What started as a website refresh became scalable design infrastructure — one system now powers Techlove’s website, UI components, and social media.',
+    category: 'Design System · UX/UI Case Study',
+    summary:
+      'A real-world design system for Techlove.se — primitive and semantic tokens, a 20+ component library, a redesigned website, and unified social templates across three platforms.',
+    hero: { src: asset('/images/techlove-hero.jpg'), alt: 'Techlove brand design system overview' },
+    liveDemo: 'https://techlove.se',
+    facts: [
+      { label: 'Role', value: 'UX/UI Design Intern' },
+      { label: 'Team', value: '3 designers · 2 developers' },
+      { label: 'Timeline', value: '8 weeks' },
+      { label: 'Deliverables', value: 'Design system · Website · Social templates' },
+    ],
+    sections: [
+      {
+        kicker: 'Overview',
+        heading: 'One system instead of scattered design',
+        body: [
+          'Techlove is a Swedish digital agency that builds apps and digital products for startups and scaleups. The assignment began as a website refresh — but the real problem ran deeper: there was no shared design language. Every page, post, and component was designed from scratch.',
+          'Over eight weeks, our team designed and implemented a scalable design system that now powers the website, the social media presence, and the developer workflow.',
+        ],
+      },
+      {
+        kicker: 'Challenge',
+        heading: 'Same brand, a different face everywhere',
+        bullets: [
+          'Colors and typography varied from page to page — no single source of truth',
+          'Every social media post was designed one-off, costing hours of manual work',
+          'Developers rebuilt similar UI again and again with hard-coded values',
+          'Updating the brand meant touching every screen and template by hand',
+        ],
+        quote: 'The real problem wasn’t the website — it was the missing system behind it',
+      },
+      {
+        kicker: 'My Role',
+        heading: 'An intern with an owner’s mindset',
+        body: [
+          'As a UX/UI design intern in a three-person design team, I worked alongside our design lead and a fellow intern, collaborating directly with two developers.',
+        ],
+        bullets: [
+          'Co-designed the token architecture — primitive and semantic layers',
+          'Built reusable components for the shared Figma library',
+          'Designed social media templates for three platforms',
+          'Redesigned website screens on top of the new system',
+        ],
+      },
+      {
+        kicker: 'Business Goals',
+        heading: 'Design as long-term infrastructure',
+        bullets: [
+          'Cut production time for new pages and social posts',
+          'Keep the brand consistent across every digital touchpoint',
+          'Let non-designers produce on-brand assets from templates',
+          'Make design-to-development handoff faster and unambiguous',
+        ],
+      },
+      {
+        kicker: 'Process',
+        heading: 'Eight weeks from audit to adoption',
+        timeline: [
+          {
+            phase: 'Design audit',
+            detail:
+              'Inventory of every color, text style, and UI pattern across the website and social channels',
+          },
+          {
+            phase: 'AI-assisted extraction',
+            detail: 'Clustering recurring patterns into component candidates',
+          },
+          {
+            phase: 'Token architecture',
+            detail: 'Primitive and semantic color layers, typography and spacing scales',
+          },
+          {
+            phase: 'Component library',
+            detail: '20+ reusable components built as a shared Figma library',
+          },
+          { phase: 'Website redesign', detail: '10+ screens rebuilt on the new system' },
+          {
+            phase: 'Social system & handoff',
+            detail: '15+ templates across three platforms, plus developer documentation',
+          },
+        ],
+      },
+      {
+        kicker: 'Process',
+        heading: 'Finding the system hiding in the UI',
+        body: [
+          'Before building anything new, we catalogued what already existed: every color value, every text style, every repeating pattern across the website and social channels.',
+          'The audit made the problem measurable — dozens of near-identical colors and styles doing the same job — and became the business case for a system instead of another one-off redesign.',
+        ],
+      },
+      {
+        kicker: 'Process',
+        heading: 'AI as an audit accelerator',
+        body: [
+          'I used AI tooling to scan existing pages and cluster recurring UI patterns into component candidates. Instead of manually comparing dozens of screens, I could focus on the design decisions: what deserves to be a component, what is a variant, and what should be retired.',
+          'AI accelerated the analysis — the design judgment stayed human.',
+        ],
+      },
+      {
+        kicker: 'Design System',
+        heading: 'From audit to architecture',
+        body: [
+          'The system is built in two token layers. Primitives hold the raw values; semantic tokens describe intent — what a color does, not what it looks like. Components consume only semantic tokens, so the whole system stays consistent by construction.',
+        ],
+        metrics: [
+          { value: '2', label: 'Token layers' },
+          { value: '4', label: 'Primitive color families' },
+          { value: '18', label: 'Semantic tokens' },
+          { value: '20+', label: 'Reusable components' },
+        ],
+      },
+      {
+        kicker: 'Design System',
+        heading: 'Primitives: a small set of raw decisions',
+        body: [
+          'Primitive tokens are the foundation — named color steps like Blush 500 or Ink 800, plus type and spacing scales. They know nothing about where they are used, which makes them safe to evolve.',
+        ],
+      },
+      {
+        kicker: 'Design System',
+        heading: 'Semantic tokens describe intent, not appearance',
+        body: [
+          'Each semantic token maps a primitive to a role — button background, heading text, footer surface. Change one primitive value and every component using it updates automatically. That is what makes the system scalable: a rebrand becomes a token update, not a redesign project.',
+        ],
+        tokenFlow: [
+          {
+            primitive: 'Blush 500',
+            hex: '#DC889F',
+            semantic: 'color/action/primary/default',
+            usage: 'Primary button background',
+          },
+          {
+            primitive: 'Ink 800',
+            hex: '#191C1F',
+            semantic: 'color/text/heading',
+            usage: 'Headings and gradient text',
+          },
+          {
+            primitive: 'Abyss 800',
+            hex: '#192533',
+            semantic: 'color/surface/dark',
+            usage: 'Footer and dark sections',
+          },
+        ],
+        images: [
+          {
+            src: asset('/images/techlove-token-map.png'),
+            alt: 'Complete token map — primitive to semantic to role, 18 tokens in 4 groups',
+          },
+        ],
+      },
+      {
+        kicker: 'Design System',
+        heading: 'One source of truth for every component',
+        body: [
+          'Typography, buttons, cards, forms, navigation — 20+ components documented with variants and usage rules in a shared Figma library. Designers compose pages instead of drawing them; developers map each component one-to-one in code.',
+        ],
+        images: [
+          {
+            src: asset('/images/techlove-design-system.jpg'),
+            alt: 'The Techlove brand design system reference — colors, typography, components',
+          },
+        ],
+      },
+      {
+        kicker: 'Website',
+        heading: '10+ screens rebuilt on the system',
+        body: [
+          'The redesigned website was the first proof of the system — every page below is composed entirely from library components and semantic tokens.',
+        ],
+        imageColumns: 2,
+        images: [
+          {
+            src: asset('/images/techlove-page-appdev.jpg'),
+            alt: 'Techlove app development service page',
+          },
+          { src: asset('/images/techlove-page-ux.jpg'), alt: 'Techlove UX design service page' },
+          { src: asset('/images/techlove-page-article.jpg'), alt: 'Techlove article page' },
+          { src: asset('/images/techlove-page-blog.jpg'), alt: 'Techlove insights and blog page' },
+          { src: asset('/images/techlove-page-about.jpg'), alt: 'Techlove about us page' },
+        ],
+      },
+      {
+        kicker: 'Social Media',
+        heading: 'A design system for content, too',
+        body: [
+          'The same tokens and components extend to social media: 15+ templates across Instagram, LinkedIn, and YouTube. The team can now produce on-brand posts in minutes — without starting from a blank canvas.',
+        ],
+        images: [
+          {
+            src: asset('/images/techlove-social-canvas-square.jpg'),
+            alt: 'Square post template iterations on the Figma canvas',
+          },
+          {
+            src: asset('/images/techlove-social-canvas-portrait.jpg'),
+            alt: 'Portrait post template iterations on the Figma canvas',
+          },
+          {
+            src: asset('/images/techlove-social-canvas-story.jpg'),
+            alt: 'Story format template iterations on the Figma canvas',
+          },
+        ],
+      },
+      {
+        kicker: 'Social Media',
+        heading: 'One message, every format',
+        body: [
+          'Each template family covers every aspect ratio a campaign needs — square, portrait, landscape, and story — with light and dark variants built from the same semantic tokens.',
+        ],
+        imageColumns: 3,
+        images: [
+          {
+            src: asset('/images/techlove-social-square.jpg'),
+            alt: 'Square social post — employee spotlight template',
+          },
+          {
+            src: asset('/images/techlove-social-landscape.jpg'),
+            alt: 'Landscape social post — light variant',
+          },
+          {
+            src: asset('/images/techlove-social-dark.jpg'),
+            alt: 'Landscape social post — dark variant',
+          },
+        ],
+      },
+      {
+        kicker: 'Social Media',
+        heading: 'From posts to live formats',
+        body: [
+          'The system also covers Techlove’s video content — branded frames and end screens for Morgonsoffan, the company’s weekly live tech talk on YouTube.',
+        ],
+        imageColumns: 2,
+        images: [
+          {
+            src: asset('/images/techlove-video-live.jpg'),
+            alt: 'Morgonsoffan live show overlay template',
+          },
+          {
+            src: asset('/images/techlove-video-outro.jpg'),
+            alt: 'Morgonsoffan video end screen template',
+          },
+        ],
+      },
+      {
+        kicker: 'Collaboration',
+        heading: 'Handoff without guesswork',
+        bullets: [
+          'Token names are shared between Figma and code — designers and developers speak the same language',
+          'Components map one-to-one from the library to the codebase',
+          'Semantic naming makes files self-documenting — no more “which gray is this?”',
+          'New pages ship faster because the building blocks already exist',
+        ],
+      },
+      {
+        kicker: 'Impact',
+        heading: 'Value that outlasts the redesign',
+        body: [
+          'The redesign shipped — but the system is the real deliverable: design infrastructure the company builds on every week.',
+        ],
+        metrics: [
+          { value: '1', label: 'Scalable design system' },
+          { value: '15+', label: 'Social media templates' },
+          { value: '3', label: 'Platforms unified' },
+          { value: '10+', label: 'Website screens redesigned' },
+        ],
+        quote:
+          'I didn’t just redesign the website — I built a scalable design system that unified the entire digital experience',
+      },
+      {
+        kicker: 'Reflection',
+        heading: 'What this project taught me',
+        bullets: [
+          'Naming is design: a good token name answers questions before they are asked',
+          'Think in systems, not screens — the second page you build proves the first one’s logic',
+          'Involve developers early: a design system is a shared product, not a Figma file',
+          'AI is a powerful accelerator for analysis, but design judgment decides what ships',
+        ],
+      },
+    ],
+  },
   {
     slug: 'kazify',
     title: 'Kazify',

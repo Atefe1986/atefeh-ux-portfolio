@@ -44,8 +44,20 @@ export default function CaseStudy() {
               rel="noreferrer"
               className="mt-8 inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-accent"
             >
-              View live demo ↗
+              View live site ↗
             </a>
+          )}
+          {project.facts && (
+            <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-line pt-8 sm:grid-cols-4">
+              {project.facts.map((fact) => (
+                <div key={fact.label}>
+                  <p className="text-xs font-semibold tracking-[0.18em] text-ink-faint uppercase">
+                    {fact.label}
+                  </p>
+                  <p className="mt-2 text-sm leading-snug font-medium">{fact.value}</p>
+                </div>
+              ))}
+            </div>
           )}
         </motion.div>
       </header>
@@ -99,6 +111,77 @@ export default function CaseStudy() {
                     ))}
                   </ul>
                 )}
+                {section.metrics && (
+                  <div className="mb-5 grid grid-cols-2 gap-4 lg:grid-cols-4">
+                    {section.metrics.map((metric) => (
+                      <div
+                        key={metric.label}
+                        className="rounded-xl border border-line bg-surface/60 p-5"
+                      >
+                        <p className="font-display text-3xl font-medium tracking-tight text-accent">
+                          {metric.value}
+                        </p>
+                        <p className="mt-2 text-xs leading-snug font-medium text-ink-soft">
+                          {metric.label}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {section.timeline && (
+                  <ol className="mb-5">
+                    {section.timeline.map((step, stepIndex) => (
+                      <li key={step.phase} className="relative flex gap-5 pb-8 last:pb-0">
+                        {stepIndex < (section.timeline?.length ?? 0) - 1 && (
+                          <span
+                            aria-hidden="true"
+                            className="absolute top-9 left-4 h-full w-px bg-line"
+                          />
+                        )}
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-accent text-xs font-semibold text-accent">
+                          {stepIndex + 1}
+                        </span>
+                        <div>
+                          <p className="font-display text-lg font-medium tracking-tight">
+                            {step.phase}
+                          </p>
+                          <p className="mt-1 max-w-prose text-sm leading-relaxed text-ink-soft">
+                            {step.detail}
+                          </p>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                )}
+                {section.tokenFlow && (
+                  <div className="mb-5 space-y-3">
+                    {section.tokenFlow.map((row) => (
+                      <div
+                        key={row.semantic}
+                        className="flex flex-col gap-2 rounded-xl border border-line bg-surface/60 p-4 sm:flex-row sm:items-center sm:gap-4"
+                      >
+                        <span className="flex shrink-0 items-center gap-2 sm:w-28">
+                          <span
+                            aria-hidden="true"
+                            className="h-4 w-4 shrink-0 rounded-full border border-line"
+                            style={{ backgroundColor: row.hex }}
+                          />
+                          <span className="text-sm font-medium">{row.primitive}</span>
+                        </span>
+                        <span aria-hidden="true" className="hidden text-accent sm:block">
+                          →
+                        </span>
+                        <code className="w-fit rounded-md bg-surface px-2 py-1 font-mono text-xs text-ink-soft">
+                          {row.semantic}
+                        </code>
+                        <span aria-hidden="true" className="hidden text-accent sm:block">
+                          →
+                        </span>
+                        <span className="text-sm leading-snug text-ink-soft">{row.usage}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
                 {section.quote && (
                   <blockquote className="my-8 border-l-2 border-accent pl-6 font-display text-2xl font-medium tracking-tight text-balance italic">
                     “{section.quote}”
@@ -113,7 +196,15 @@ export default function CaseStudy() {
                   </p>
                 ))}
                 {section.images && (
-                  <div className="mt-8 space-y-8">
+                  <div
+                    className={
+                      section.imageColumns === 2
+                        ? 'mt-8 grid items-start gap-6 sm:grid-cols-2'
+                        : section.imageColumns === 3
+                          ? 'mt-8 grid items-start gap-6 sm:grid-cols-3'
+                          : 'mt-8 space-y-8'
+                    }
+                  >
                     {section.images.map((image) => (
                       <img
                         key={image.src}
