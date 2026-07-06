@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import SectionHeading from '../components/SectionHeading'
 import ProjectCard from '../components/ProjectCard'
+import RotatingBadge from '../components/RotatingBadge'
 import { projects } from '../data/projects'
 import { site } from '../data/site'
 import usePageTitle from '../hooks/usePageTitle'
@@ -13,7 +14,15 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="mx-auto max-w-6xl px-6 pt-24 pb-20 sm:pt-32 sm:pb-28">
+      <section className="relative mx-auto max-w-6xl px-6 pt-24 pb-20 sm:pt-32 sm:pb-28">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.35 }}
+          className="absolute top-1/2 right-10 hidden -translate-y-1/2 xl:block"
+        >
+          <RotatingBadge className="h-52 w-52" />
+        </motion.div>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
