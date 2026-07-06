@@ -205,12 +205,6 @@ export const projects: Project[] = [
             usage: 'Footer and dark sections',
           },
         ],
-        images: [
-          {
-            src: asset('/images/techlove-token-map.png'),
-            alt: 'Complete token map — primitive to semantic to role, 18 tokens in 4 groups',
-          },
-        ],
       },
       {
         kicker: 'Design System',
@@ -218,10 +212,23 @@ export const projects: Project[] = [
         body: [
           'Typography, buttons, cards, forms, navigation — 20+ components documented with variants and usage rules in a shared Figma library. Designers compose pages instead of drawing them; developers map each component one-to-one in code.',
         ],
+        imageColumns: 2,
         images: [
           {
-            src: asset('/images/techlove-design-system.jpg'),
-            alt: 'The Techlove brand design system reference — colors, typography, components',
+            src: asset('/images/techlove-ds-typography.jpg'),
+            alt: 'Typography scale — headers, eyebrow label, and body styles',
+          },
+          {
+            src: asset('/images/techlove-ds-buttons.jpg'),
+            alt: 'Button variants in three sizes and the spacing scale',
+          },
+          {
+            src: asset('/images/techlove-ds-components.jpg'),
+            alt: 'Navbar, cards, badges, and footer components',
+          },
+          {
+            src: asset('/images/techlove-ds-colors.jpg'),
+            alt: 'Primitive color scales — Blush and Abyss families',
           },
         ],
       },
