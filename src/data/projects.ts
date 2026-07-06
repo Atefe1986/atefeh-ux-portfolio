@@ -39,6 +39,7 @@ export interface ProjectSection {
   tokenFlow?: TokenFlowRow[]
   images?: ProjectImage[]
   imageColumns?: 2 | 3
+  imageFrame?: boolean
 }
 
 export interface Project {
@@ -121,6 +122,10 @@ export const projects: Project[] = [
       {
         kicker: 'Process',
         heading: 'Eight weeks from audit to adoption',
+        body: [
+          'Before building anything new, we catalogued every color, text style, and repeating UI pattern across the website and social channels — with AI tooling clustering recurring patterns into component candidates, so the design judgment could stay human.',
+          'The audit made the problem measurable and became the business case for a system instead of another one-off redesign.',
+        ],
         timeline: [
           {
             phase: 'Design audit',
@@ -147,46 +152,17 @@ export const projects: Project[] = [
         ],
       },
       {
-        kicker: 'Process',
-        heading: 'Finding the system hiding in the UI',
-        body: [
-          'Before building anything new, we catalogued what already existed: every color value, every text style, every repeating pattern across the website and social channels.',
-          'The audit made the problem measurable — dozens of near-identical colors and styles doing the same job — and became the business case for a system instead of another one-off redesign.',
-        ],
-      },
-      {
-        kicker: 'Process',
-        heading: 'AI as an audit accelerator',
-        body: [
-          'I used AI tooling to scan existing pages and cluster recurring UI patterns into component candidates. Instead of manually comparing dozens of screens, I could focus on the design decisions: what deserves to be a component, what is a variant, and what should be retired.',
-          'AI accelerated the analysis — the design judgment stayed human.',
-        ],
-      },
-      {
         kicker: 'Design System',
-        heading: 'From audit to architecture',
+        heading: 'Two token layers, one source of truth',
         body: [
-          'The system is built in two token layers. Primitives hold the raw values; semantic tokens describe intent — what a color does, not what it looks like. Components consume only semantic tokens, so the whole system stays consistent by construction.',
+          'The system is built in two token layers. Primitive tokens hold the raw values — color steps like Blush 500 or Ink 800, plus type and spacing scales. Semantic tokens map each primitive to a role: button background, heading text, footer surface.',
+          'Components consume only semantic tokens, so changing one primitive value updates every screen — a rebrand becomes a token update, not a redesign project. 20+ components are documented with variants and usage rules in a shared Figma library that developers map one-to-one in code.',
         ],
         metrics: [
           { value: '2', label: 'Token layers' },
           { value: '4', label: 'Primitive color families' },
           { value: '18', label: 'Semantic tokens' },
           { value: '20+', label: 'Reusable components' },
-        ],
-      },
-      {
-        kicker: 'Design System',
-        heading: 'Primitives: a small set of raw decisions',
-        body: [
-          'Primitive tokens are the foundation — named color steps like Blush 500 or Ink 800, plus type and spacing scales. They know nothing about where they are used, which makes them safe to evolve.',
-        ],
-      },
-      {
-        kicker: 'Design System',
-        heading: 'Semantic tokens describe intent, not appearance',
-        body: [
-          'Each semantic token maps a primitive to a role — button background, heading text, footer surface. Change one primitive value and every component using it updates automatically. That is what makes the system scalable: a rebrand becomes a token update, not a redesign project.',
         ],
         tokenFlow: [
           {
@@ -207,13 +183,6 @@ export const projects: Project[] = [
             semantic: 'color/surface/dark',
             usage: 'Footer and dark sections',
           },
-        ],
-      },
-      {
-        kicker: 'Design System',
-        heading: 'One source of truth for every component',
-        body: [
-          'Typography, buttons, cards, forms, navigation — 20+ components documented with variants and usage rules in a shared Figma library. Designers compose pages instead of drawing them; developers map each component one-to-one in code.',
         ],
         imageColumns: 2,
         images: [
@@ -242,6 +211,7 @@ export const projects: Project[] = [
           'The redesigned website was the first proof of the system — service, about, article, and insights pages all composed entirely from library components and semantic tokens.',
         ],
         imageColumns: 2,
+        imageFrame: true,
         images: [
           {
             src: asset('/images/techlove-page-appdev.jpg'),

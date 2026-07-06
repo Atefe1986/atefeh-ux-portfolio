@@ -131,13 +131,7 @@ export default function CaseStudy() {
                 {section.timeline && (
                   <ol className="mb-5">
                     {section.timeline.map((step, stepIndex) => (
-                      <li key={step.phase} className="relative flex gap-5 pb-8 last:pb-0">
-                        {stepIndex < (section.timeline?.length ?? 0) - 1 && (
-                          <span
-                            aria-hidden="true"
-                            className="absolute top-9 left-4 h-full w-px bg-line"
-                          />
-                        )}
+                      <li key={step.phase} className="flex gap-5 pb-8 last:pb-0">
                         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-accent text-xs font-semibold text-accent">
                           {stepIndex + 1}
                         </span>
@@ -211,7 +205,11 @@ export default function CaseStudy() {
                         src={image.src}
                         alt={image.alt}
                         loading="lazy"
-                        className="w-full rounded-xl bg-surface"
+                        className={
+                          section.imageFrame
+                            ? 'w-full rounded-xl border border-line bg-surface shadow-[0_16px_40px_rgba(25,28,31,0.14)]'
+                            : 'w-full rounded-xl bg-surface'
+                        }
                       />
                     ))}
                   </div>
