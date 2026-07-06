@@ -118,7 +118,7 @@ export default function Home() {
               src={site.about.portrait.src}
               alt={site.about.portrait.alt}
               loading="lazy"
-              className="hidden w-full max-w-sm rounded-xl lg:block"
+              className="w-full max-w-sm rounded-xl"
             />
           </Reveal>
           <Reveal delay={0.1}>
