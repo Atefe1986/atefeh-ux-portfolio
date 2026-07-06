@@ -64,7 +64,10 @@ export const projects: Project[] = [
     category: 'Design System · UX/UI Case Study',
     summary:
       'A real-world design system for Techlove.se — primitive and semantic tokens, a 20+ component library, a redesigned website, and unified social templates across three platforms.',
-    hero: { src: asset('/images/techlove-hero.jpg'), alt: 'Techlove brand design system overview' },
+    hero: {
+      src: asset('/images/techlove-hero.jpg'),
+      alt: 'Techlove.se homepage shown on laptop and phone',
+    },
     liveDemo: 'https://techlove.se',
     facts: [
       { label: 'Role', value: 'UX/UI Design Intern' },
