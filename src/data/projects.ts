@@ -246,28 +246,8 @@ export const projects: Project[] = [
         kicker: 'Social Media',
         heading: 'A design system for content, too',
         body: [
-          'The same tokens and components extend to social media: 15+ templates across Instagram, LinkedIn, and YouTube. The team can now produce on-brand posts in minutes — without starting from a blank canvas.',
-        ],
-        images: [
-          {
-            src: asset('/images/techlove-social-canvas-square.jpg'),
-            alt: 'Square post template iterations on the Figma canvas',
-          },
-          {
-            src: asset('/images/techlove-social-canvas-portrait.jpg'),
-            alt: 'Portrait post template iterations on the Figma canvas',
-          },
-          {
-            src: asset('/images/techlove-social-canvas-story.jpg'),
-            alt: 'Story format template iterations on the Figma canvas',
-          },
-        ],
-      },
-      {
-        kicker: 'Social Media',
-        heading: 'One message, every format',
-        body: [
-          'Each template family covers every aspect ratio a campaign needs — square, portrait, landscape, and story — with light and dark variants built from the same semantic tokens.',
+          'The same tokens and components extend to social media: 15+ templates across Instagram, LinkedIn, and YouTube — every aspect ratio a campaign needs, with light and dark variants built from the same semantic tokens.',
+          'The system even covers video: branded frames and end screens for Morgonsoffan, Techlove’s weekly live tech talk. The team now produces on-brand content in minutes instead of starting from a blank canvas.',
         ],
         imageColumns: 3,
         images: [
@@ -283,16 +263,10 @@ export const projects: Project[] = [
             src: asset('/images/techlove-social-dark.jpg'),
             alt: 'Landscape social post — dark variant',
           },
-        ],
-      },
-      {
-        kicker: 'Social Media',
-        heading: 'From posts to live formats',
-        body: [
-          'The system also covers Techlove’s video content — branded frames and end screens for Morgonsoffan, the company’s weekly live tech talk on YouTube.',
-        ],
-        imageColumns: 2,
-        images: [
+          {
+            src: asset('/images/techlove-social-canvas-square.jpg'),
+            alt: 'Template variants on the Figma canvas',
+          },
           {
             src: asset('/images/techlove-video-live.jpg'),
             alt: 'Morgonsoffan live show overlay template',
