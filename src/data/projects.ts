@@ -62,7 +62,7 @@ export const projects: Project[] = [
     tagline: 'A Design System That Unified a Digital Agency',
     subtitle:
       'What started as a website refresh became scalable design infrastructure — one system now powers Techlove’s website, UI components, and social media.',
-    category: 'Design System · UX/UI Case Study',
+    category: 'Website Redesign & Design System',
     summary:
       'A real-world design system for Techlove.se — primitive and semantic tokens, a 20+ component library, a redesigned website, and unified social templates across three platforms.',
     hero: {
@@ -138,7 +138,7 @@ export const projects: Project[] = [
           },
           {
             phase: 'Token architecture',
-            detail: 'Primitive and semantic color layers, typography and spacing scales',
+            detail: 'Primitive and semantic color layers',
           },
           {
             phase: 'Component library',
@@ -320,7 +320,7 @@ export const projects: Project[] = [
     tagline: 'All-in-One App for Parent–Preschool Communication',
     subtitle:
       'One clear place for parents to stay updated — no more scattered tools or clunky UIs.',
-    category: 'Mobile App · UX Case Study',
+    category: 'Mobile App · UX/UI Case Study',
     summary:
       'A detailed case study of an app that centralizes parent–preschool communication, from research and user segmentation to tested, iterated high-fidelity screens.',
     hero: { src: asset('/images/kiddolink-hero.png'), alt: 'Kiddolink app screens overview' },
@@ -443,7 +443,7 @@ export const projects: Project[] = [
     tagline: 'Smarter Shopping for Modern Lighting',
     subtitle:
       'Filter, compare, and visualize products — making lighting decisions effortless.',
-    category: 'E-Commerce · UX Case Study',
+    category: 'E-Commerce · UX/UI Case Study',
     summary:
       'A responsive e-commerce platform for modern lighting, designed around effortless product discovery, side-by-side comparison, and in-home visualization.',
     hero: { src: asset('/images/luminova-hero.png'), alt: 'Luminova e-commerce website screens' },
