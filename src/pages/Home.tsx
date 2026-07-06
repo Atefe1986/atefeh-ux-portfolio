@@ -64,7 +64,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 sm:grid-cols-3">
           {site.pillars.map((pillar, i) => (
             <Reveal key={pillar.title} delay={i * 0.1}>
-              <p className="font-display text-4xl font-light text-line select-none" aria-hidden="true">
+              <p className="font-display text-4xl font-light text-accent/70 select-none" aria-hidden="true">
                 {String(i + 1).padStart(2, '0')}
               </p>
               <h2 className="mt-3 font-display text-xl font-medium tracking-tight">
