@@ -60,6 +60,7 @@ export interface Project {
   hero: ProjectImage
   liveDemo?: string
   prototypeUrl?: string
+  figmaFileUrl?: string
   facts?: ProjectFact[]
   sections: ProjectSection[]
 }
@@ -461,6 +462,8 @@ export const projects: Project[] = [
     },
     prototypeUrl:
       'https://www.figma.com/proto/McejSqI4krx5Ag8Wb5t9Oc/Volont%C3%A4rpool--gmail--last-version?node-id=755-9961&t=ITt8oC84CKMQk5ac-1&scaling=scale-down&content-scaling=fixed&page-id=752%3A8949&starting-point-node-id=755%3A9961',
+    figmaFileUrl:
+      'https://www.figma.com/design/McejSqI4krx5Ag8Wb5t9Oc/Volont%C3%A4rpool--gmail--last-version?node-id=768-3068&t=U3YzHftN87nIyIkr-1',
     facts: [
       { label: 'Role', value: 'UX/UI Designer' },
       { label: 'Team', value: '5 designers' },

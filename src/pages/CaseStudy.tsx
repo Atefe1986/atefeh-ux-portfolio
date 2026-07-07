@@ -37,15 +37,29 @@ export default function CaseStudy() {
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
             {project.subtitle}
           </p>
-          {(project.liveDemo || project.prototypeUrl) && (
-            <a
-              href={project.liveDemo ?? project.prototypeUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-8 inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-accent"
-            >
-              {project.liveDemo ? 'View live site ↗' : 'View prototype ↗'}
-            </a>
+          {(project.liveDemo || project.prototypeUrl || project.figmaFileUrl) && (
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              {(project.liveDemo || project.prototypeUrl) && (
+                <a
+                  href={project.liveDemo ?? project.prototypeUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-accent"
+                >
+                  {project.liveDemo ? 'View live site ↗' : 'View prototype ↗'}
+                </a>
+              )}
+              {project.figmaFileUrl && (
+                <a
+                  href={project.figmaFileUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-block rounded-full border border-line px-6 py-3 text-sm font-medium text-ink-soft transition-colors hover:border-accent hover:text-accent"
+                >
+                  Explore the Figma file ↗
+                </a>
+              )}
+            </div>
           )}
           {project.facts && (
             <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-line pt-8 sm:grid-cols-4">
