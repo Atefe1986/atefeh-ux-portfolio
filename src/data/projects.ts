@@ -324,6 +324,129 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: 'kiddolink',
+    title: 'Kiddolink',
+    tagline: 'All-in-One App for Parent–Preschool Communication',
+    subtitle:
+      'One clear place for parents to stay updated — no more scattered tools or clunky UIs.',
+    category: 'Mobile App · UX/UI Case Study',
+    summary:
+      'A detailed case study of an app that centralizes parent–preschool communication, from research and user segmentation to tested, iterated high-fidelity screens.',
+    hero: { src: asset('/images/kiddolink-hero.png'), alt: 'Kiddolink app screens overview' },
+    sections: [
+      {
+        kicker: 'Overview',
+        heading: 'An iterative, user-centered process',
+        body: [
+          'The UX process for Kiddolink followed an iterative, user-centered approach structured around agile sprints. Since the app was designed for both preschool staff and parents, it was important to consider their distinct communication behaviours and pain points.',
+        ],
+        images: [
+          { src: asset('/images/kiddolink-ux-process.png'), alt: 'Kiddolink UX process overview' },
+        ],
+      },
+      {
+        kicker: 'Research',
+        heading: 'Research goals',
+        body: [
+          'To understand how to improve communication between preschool staff and parents, we focused our research on the following questions:',
+        ],
+        bullets: [
+          'How do parents currently receive updates about their child’s day?',
+          'What pain points exist in current communication methods?',
+          'What makes parents feel informed, connected, and emotionally supported?',
+          'How do different behaviour types (digital vs. communicative) affect their expectations?',
+        ],
+        quote: 'Fragmented tools and poor UI frustrate preschool parents',
+      },
+      {
+        kicker: 'Research',
+        heading: 'Uncovering insights from parent interviews',
+        body: [
+          'We conducted in-depth interviews with seven parents and two staff to uncover everyday communication challenges in preschool settings. These insights became the foundation for defining user types and shaping the Kiddolink app’s core features.',
+          'This overview table summarizes all our interview participants — their roles, motivations, behaviours, types, wishes and challenges. We used it to identify needs, categorize user types and shape our solution. It also highlights the variation in users’ technical skills, daily routines and preferences.',
+        ],
+        images: [
+          {
+            src: asset('/images/kiddolink-interview-table.png'),
+            alt: 'Overview table of interview participants, their roles, motivations and challenges',
+          },
+        ],
+      },
+      {
+        kicker: 'Insights',
+        heading: 'User insights that shaped the MVP',
+        bullets: [
+          'A need for centralized and clear communication',
+          'Different user behaviours require tailored solutions',
+          'Poor interface design leads to frustration and reduces trust',
+        ],
+        images: [
+          {
+            src: asset('/images/kiddolink-user-insights.png'),
+            alt: 'Key user insights that shaped the Kiddolink MVP',
+          },
+        ],
+      },
+      {
+        kicker: 'Design',
+        heading: 'From idea to interface',
+        body: [
+          'The Kiddolink prototype evolved from wireframes designed to reflect the needs of busy and communicative parents. Each screen focused on intuitive navigation, visual hierarchy, and responsive design.',
+        ],
+        images: [
+          { src: asset('/images/kiddolink-wireframes-1.png'), alt: 'Kiddolink wireframes — first set' },
+          { src: asset('/images/kiddolink-wireframes-2.png'), alt: 'Kiddolink wireframes — second set' },
+        ],
+      },
+      {
+        kicker: 'Design',
+        heading: 'High-fidelity UI screens',
+        body: [
+          'These screens reflect the final visual style, branding, and responsive layout of the Kiddolink MVP.',
+        ],
+        images: [
+          {
+            src: asset('/images/kiddolink-hifi-screens.png'),
+            alt: 'Kiddolink high-fidelity UI screens',
+          },
+        ],
+      },
+      {
+        kicker: 'Validation',
+        heading: 'Validating with users',
+        body: [
+          'We tested the prototype with both behavioural user types — “digital check-in” and “communicative” — using in-person guerrilla testing and remote sessions via Useberry. Tasks included checking the daily plan, sending messages, and reporting absence.',
+          'Through observation and screen recording, we identified areas of friction in navigation, communication clarity, and flow logic. The feedback directly informed design iterations.',
+        ],
+        images: [
+          { src: asset('/images/kiddolink-testing.png'), alt: 'Usability testing sessions for Kiddolink' },
+        ],
+      },
+      {
+        kicker: 'Iteration',
+        heading: 'From testing to continuous improvement',
+        body: ['Here are the key changes we made after testing:'],
+        bullets: [
+          '“Full Day” vs. “Custom” was unclear — so we clarified layout and labels',
+          'Child 1/2 buttons were replaced with checkboxes, which users understood instantly',
+          'Blue buttons improved accessibility and readability — so we kept them',
+          'The calendar was slightly adjusted to better align with the checkbox layout',
+          'Absent status is now marked in red to stand out during quick scans',
+          'News cards are now fully clickable (not just the text) — based on click data and heatmaps',
+        ],
+        outro: [
+          'By iterating quickly based on user feedback, we were able to improve clarity, accessibility, and the overall experience — a crucial step in our UX process.',
+        ],
+        images: [
+          {
+            src: asset('/images/kiddolink-test-iterations.png'),
+            alt: 'Before-and-after design iterations from usability testing',
+          },
+        ],
+      },
+    ],
+  },
+  {
     slug: 'volunteer-portal',
     title: 'Volunteer Portal',
     tagline: 'A Digital Platform That Strengthens Local Communities',
@@ -608,129 +731,6 @@ export const projects: Project[] = [
           'MoSCoW is most valuable as a conversation tool: it turns “nice ideas” into explicit trade-offs',
           'Accessibility decisions made early cost nothing; the same decisions made late cost redesigns',
           'Designing for crisis means designing for degraded conditions — offline fallbacks and low-bandwidth support belong on the roadmap even when they sit outside the MVP',
-        ],
-      },
-    ],
-  },
-  {
-    slug: 'kiddolink',
-    title: 'Kiddolink',
-    tagline: 'All-in-One App for Parent–Preschool Communication',
-    subtitle:
-      'One clear place for parents to stay updated — no more scattered tools or clunky UIs.',
-    category: 'Mobile App · UX/UI Case Study',
-    summary:
-      'A detailed case study of an app that centralizes parent–preschool communication, from research and user segmentation to tested, iterated high-fidelity screens.',
-    hero: { src: asset('/images/kiddolink-hero.png'), alt: 'Kiddolink app screens overview' },
-    sections: [
-      {
-        kicker: 'Overview',
-        heading: 'An iterative, user-centered process',
-        body: [
-          'The UX process for Kiddolink followed an iterative, user-centered approach structured around agile sprints. Since the app was designed for both preschool staff and parents, it was important to consider their distinct communication behaviours and pain points.',
-        ],
-        images: [
-          { src: asset('/images/kiddolink-ux-process.png'), alt: 'Kiddolink UX process overview' },
-        ],
-      },
-      {
-        kicker: 'Research',
-        heading: 'Research goals',
-        body: [
-          'To understand how to improve communication between preschool staff and parents, we focused our research on the following questions:',
-        ],
-        bullets: [
-          'How do parents currently receive updates about their child’s day?',
-          'What pain points exist in current communication methods?',
-          'What makes parents feel informed, connected, and emotionally supported?',
-          'How do different behaviour types (digital vs. communicative) affect their expectations?',
-        ],
-        quote: 'Fragmented tools and poor UI frustrate preschool parents',
-      },
-      {
-        kicker: 'Research',
-        heading: 'Uncovering insights from parent interviews',
-        body: [
-          'We conducted in-depth interviews with seven parents and two staff to uncover everyday communication challenges in preschool settings. These insights became the foundation for defining user types and shaping the Kiddolink app’s core features.',
-          'This overview table summarizes all our interview participants — their roles, motivations, behaviours, types, wishes and challenges. We used it to identify needs, categorize user types and shape our solution. It also highlights the variation in users’ technical skills, daily routines and preferences.',
-        ],
-        images: [
-          {
-            src: asset('/images/kiddolink-interview-table.png'),
-            alt: 'Overview table of interview participants, their roles, motivations and challenges',
-          },
-        ],
-      },
-      {
-        kicker: 'Insights',
-        heading: 'User insights that shaped the MVP',
-        bullets: [
-          'A need for centralized and clear communication',
-          'Different user behaviours require tailored solutions',
-          'Poor interface design leads to frustration and reduces trust',
-        ],
-        images: [
-          {
-            src: asset('/images/kiddolink-user-insights.png'),
-            alt: 'Key user insights that shaped the Kiddolink MVP',
-          },
-        ],
-      },
-      {
-        kicker: 'Design',
-        heading: 'From idea to interface',
-        body: [
-          'The Kiddolink prototype evolved from wireframes designed to reflect the needs of busy and communicative parents. Each screen focused on intuitive navigation, visual hierarchy, and responsive design.',
-        ],
-        images: [
-          { src: asset('/images/kiddolink-wireframes-1.png'), alt: 'Kiddolink wireframes — first set' },
-          { src: asset('/images/kiddolink-wireframes-2.png'), alt: 'Kiddolink wireframes — second set' },
-        ],
-      },
-      {
-        kicker: 'Design',
-        heading: 'High-fidelity UI screens',
-        body: [
-          'These screens reflect the final visual style, branding, and responsive layout of the Kiddolink MVP.',
-        ],
-        images: [
-          {
-            src: asset('/images/kiddolink-hifi-screens.png'),
-            alt: 'Kiddolink high-fidelity UI screens',
-          },
-        ],
-      },
-      {
-        kicker: 'Validation',
-        heading: 'Validating with users',
-        body: [
-          'We tested the prototype with both behavioural user types — “digital check-in” and “communicative” — using in-person guerrilla testing and remote sessions via Useberry. Tasks included checking the daily plan, sending messages, and reporting absence.',
-          'Through observation and screen recording, we identified areas of friction in navigation, communication clarity, and flow logic. The feedback directly informed design iterations.',
-        ],
-        images: [
-          { src: asset('/images/kiddolink-testing.png'), alt: 'Usability testing sessions for Kiddolink' },
-        ],
-      },
-      {
-        kicker: 'Iteration',
-        heading: 'From testing to continuous improvement',
-        body: ['Here are the key changes we made after testing:'],
-        bullets: [
-          '“Full Day” vs. “Custom” was unclear — so we clarified layout and labels',
-          'Child 1/2 buttons were replaced with checkboxes, which users understood instantly',
-          'Blue buttons improved accessibility and readability — so we kept them',
-          'The calendar was slightly adjusted to better align with the checkbox layout',
-          'Absent status is now marked in red to stand out during quick scans',
-          'News cards are now fully clickable (not just the text) — based on click data and heatmaps',
-        ],
-        outro: [
-          'By iterating quickly based on user feedback, we were able to improve clarity, accessibility, and the overall experience — a crucial step in our UX process.',
-        ],
-        images: [
-          {
-            src: asset('/images/kiddolink-test-iterations.png'),
-            alt: 'Before-and-after design iterations from usability testing',
-          },
         ],
       },
     ],
