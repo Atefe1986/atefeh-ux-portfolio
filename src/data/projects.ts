@@ -73,7 +73,7 @@ export const projects: Project[] = [
     facts: [
       { label: 'Role', value: 'UX/UI Design Intern' },
       { label: 'Team', value: '3 designers · 2 developers' },
-      { label: 'Timeline', value: '8 weeks' },
+      { label: 'Timeline', value: '12 weeks' },
       { label: 'Deliverables', value: 'Design system · Website · Social templates' },
     ],
     sections: [
@@ -82,7 +82,7 @@ export const projects: Project[] = [
         heading: 'One system instead of scattered design',
         body: [
           'Techlove is a Swedish digital agency that builds apps and digital products for startups and scaleups. The assignment began as a website refresh — but the real problem ran deeper: there was no shared design language. Every page, post, and component was designed from scratch.',
-          'Over eight weeks, our team designed and implemented a scalable design system that now powers the website, the social media presence, and the developer workflow.',
+          'Over twelve weeks, our team designed and implemented a scalable design system that now powers the website, the social media presence, and the developer workflow.',
         ],
       },
       {
@@ -121,7 +121,7 @@ export const projects: Project[] = [
       },
       {
         kicker: 'Process',
-        heading: 'Eight weeks from audit to adoption',
+        heading: 'Twelve weeks from audit to adoption',
         body: [
           'Before building anything new, we catalogued every color, text style, and repeating UI pattern across the website and social channels — with AI tooling clustering recurring patterns into component candidates, so the design judgment could stay human.',
           'The audit made the problem measurable and became the business case for a system instead of another one-off redesign.',
