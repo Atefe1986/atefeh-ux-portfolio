@@ -37,14 +37,14 @@ export default function CaseStudy() {
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
             {project.subtitle}
           </p>
-          {project.liveDemo && (
+          {(project.liveDemo || project.prototypeUrl) && (
             <a
-              href={project.liveDemo}
+              href={project.liveDemo ?? project.prototypeUrl}
               target="_blank"
               rel="noreferrer"
               className="mt-8 inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-accent"
             >
-              View live site ↗
+              {project.liveDemo ? 'View live site ↗' : 'View prototype ↗'}
             </a>
           )}
           {project.facts && (
@@ -128,6 +128,40 @@ export default function CaseStudy() {
                     ))}
                   </div>
                 )}
+                {section.cards && (
+                  <div className="mb-5 grid gap-4 sm:grid-cols-2">
+                    {section.cards.map((card) => (
+                      <div
+                        key={card.title}
+                        className="rounded-xl border border-line bg-surface/60 p-5"
+                      >
+                        <h3 className="font-display text-lg font-medium tracking-tight">
+                          {card.title}
+                        </h3>
+                        {card.description && (
+                          <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+                            {card.description}
+                          </p>
+                        )}
+                        {card.items && (
+                          <ul className="mt-3 space-y-2">
+                            {card.items.map((item) => (
+                              <li
+                                key={item}
+                                className="flex gap-2 text-sm leading-relaxed text-ink-soft"
+                              >
+                                <span aria-hidden="true" className="text-accent">
+                                  —
+                                </span>
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
                 {section.timeline && (
                   <ol className="mb-5">
                     {section.timeline.map((step, stepIndex) => (
@@ -189,6 +223,26 @@ export default function CaseStudy() {
                     {paragraph}
                   </p>
                 ))}
+                {section.embedUrl && (
+                  <a
+                    href={project.prototypeUrl ?? section.embedUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group relative mt-8 block overflow-hidden rounded-xl border border-line bg-surface shadow-[0_16px_40px_rgba(25,28,31,0.14)]"
+                  >
+                    <img
+                      src={project.hero.src}
+                      alt="Interactive prototype preview"
+                      loading="lazy"
+                      className="w-full"
+                    />
+                    <span className="absolute inset-0 flex items-center justify-center bg-ink/25 transition-colors group-hover:bg-ink/35">
+                      <span className="rounded-full bg-paper px-6 py-3 text-sm font-semibold text-ink shadow-lg transition-transform group-hover:scale-105">
+                        ▶ Open interactive prototype ↗
+                      </span>
+                    </span>
+                  </a>
+                )}
                 {section.images && (
                   <div
                     className={

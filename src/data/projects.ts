@@ -27,6 +27,12 @@ export interface ProjectFact {
   value: string
 }
 
+export interface SectionCard {
+  title: string
+  description?: string
+  items?: string[]
+}
+
 export interface ProjectSection {
   kicker?: string
   heading: string
@@ -37,9 +43,11 @@ export interface ProjectSection {
   metrics?: ProjectMetric[]
   timeline?: TimelineStep[]
   tokenFlow?: TokenFlowRow[]
+  cards?: SectionCard[]
   images?: ProjectImage[]
   imageColumns?: 2 | 3
   imageFrame?: boolean
+  embedUrl?: string
 }
 
 export interface Project {
@@ -51,6 +59,7 @@ export interface Project {
   summary: string
   hero: ProjectImage
   liveDemo?: string
+  prototypeUrl?: string
   facts?: ProjectFact[]
   sections: ProjectSection[]
 }
@@ -310,6 +319,295 @@ export const projects: Project[] = [
         images: [
           { src: asset('/images/kazify-screens-2.png'), alt: 'Kazify landing page sections' },
           { src: asset('/images/kazify-screens-3.png'), alt: 'Kazify landing page detail views' },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'volunteer-portal',
+    title: 'Volunteer Portal',
+    tagline: 'A Digital Platform That Strengthens Local Communities',
+    subtitle:
+      'A UX case study exploring how volunteer opportunities can become easier to discover and join — connecting residents, organizations, municipalities, and businesses through local initiatives.',
+    category: 'Community Platform · UX/UI Case Study',
+    summary:
+      'A UX concept making volunteer work easier to discover and participate in — and exploring how structured volunteer mobilization can support community resilience and crisis preparedness.',
+    hero: {
+      src: asset('/images/volunteer/hero.jpg'),
+      alt: 'Volunteer Portal homepage on laptop and mobile uppdrag screen on phone',
+    },
+    prototypeUrl:
+      'https://www.figma.com/proto/McejSqI4krx5Ag8Wb5t9Oc/Volont%C3%A4rpool--gmail--last-version?node-id=755-9961&t=ITt8oC84CKMQk5ac-1&scaling=scale-down&content-scaling=fixed&page-id=752%3A8949&starting-point-node-id=755%3A9961',
+    facts: [
+      { label: 'Role', value: 'UX/UI Designer' },
+      { label: 'Team', value: '5 designers' },
+      { label: 'Context', value: 'Study project · Chas Academy' },
+      { label: 'Timeline', value: '7 weeks' },
+    ],
+    sections: [
+      {
+        kicker: 'Overview',
+        heading: 'Making it easy to help, close to home',
+        body: [
+          'A UX concept for strengthening local communities — making volunteer opportunities easy to discover and join, and connecting residents, organizations, and municipalities around shared initiatives and crisis preparedness.',
+          'A study project in the course Advanced Interaction Design at Chas Academy, in collaboration with the association Lokalt Ledd Utveckling Halland, which contributed the real-world case.',
+        ],
+      },
+      {
+        kicker: 'The Challenge',
+        heading: 'Willing volunteers, invisible opportunities',
+        bullets: [
+          'Many local communities lack clear structures for cooperation and support when something unexpected happens',
+          'Fewer people commit to long-term volunteering, making it hard for organizations to build sustainable structures',
+          'Practical skills and preparedness knowledge are fading — at both the individual and community level',
+          'Volunteer opportunities are scattered across social media groups, noticeboards, and word of mouth',
+        ],
+        quote: 'The gap isn’t willingness to help — it’s knowing where, when, and how',
+      },
+      {
+        kicker: 'Goals',
+        heading: 'What success would look like',
+        cards: [
+          {
+            title: 'Lower the threshold',
+            description:
+              'Let a resident find a meaningful opportunity nearby and join in minutes — no memberships or long-term commitments required.',
+          },
+          {
+            title: 'A digital gathering place',
+            description:
+              'Give local communities one shared hub for initiatives, notices, and events — instead of scattered channels.',
+          },
+          {
+            title: 'Engage every generation',
+            description:
+              'Work for a time-poor, mobile-first volunteer and for an experienced helper with low digital confidence alike.',
+          },
+          {
+            title: 'Crisis-ready by design',
+            description:
+              'Structure volunteer engagement so the community can mobilize quickly when preparedness turns into response.',
+          },
+        ],
+      },
+      {
+        kicker: 'My Role',
+        heading: 'End-to-end product design',
+        body: [
+          'In a five-person design team, I drove the process end to end — from the first research question to a high-fidelity, clickable prototype.',
+        ],
+        bullets: [
+          'UX research and competitor analysis',
+          'Personas and user flows for three user groups',
+          'Information architecture and MVP definition',
+          'UI design, design system, and accessibility',
+        ],
+      },
+      {
+        kicker: 'Research',
+        heading: 'Understanding the volunteering landscape',
+        body: [
+          'Competitor analysis and desk research on community resilience shaped the concept — and surfaced three personas that capture how differently people engage:',
+        ],
+        bullets: [
+          'Anna, 28 — a digitally fluent teacher, time-poor, wanting short and flexible assignments nearby',
+          'Bengt, 67 — a retired firefighter with deep crisis skills but low digital confidence',
+          'Kim, 36 — a volunteer coordinator who needs oversight, admin tools, and calm control over communication',
+        ],
+      },
+      {
+        kicker: 'Key Insights',
+        heading: 'What the research revealed',
+        cards: [
+          {
+            title: '01 · Flexibility beats commitment',
+            description:
+              'Many volunteers want to help — but only on their own terms. Short assignments without membership lower the threshold dramatically.',
+          },
+          {
+            title: '02 · Digital confidence varies widely',
+            description:
+              'The most experienced helpers are often the least digital. If the platform is hard to use, the community loses some of its most valuable volunteers.',
+          },
+          {
+            title: '03 · Clarity builds trust',
+            description:
+              'Every opportunity needs the essentials up front — what, where, when, how many helpers are needed, and a clear call to action. Vague listings waste people’s time and goodwill.',
+          },
+          {
+            title: '04 · Coordinators need tools too',
+            description:
+              'Finding volunteers is only half the problem — coordinators need an overview, admin tools, and control over communication.',
+          },
+        ],
+      },
+      {
+        kicker: 'Defining the MVP',
+        heading: 'MoSCoW: focus before features',
+        body: [
+          'A large backlog, prioritized with MoSCoW — weighing every feature against stakeholder needs to protect the core from scope creep.',
+        ],
+        cards: [
+          {
+            title: 'Must have',
+            items: [
+              'Publish, browse, and search opportunities with filters for place, theme, and urgent vs. ongoing',
+              'Registration, login, and GDPR-secure consent handling',
+              'Opportunity details with what, where, when, how many volunteers are needed — and a clear call to action',
+              'Coordinator view for administering volunteers and content',
+            ],
+          },
+          {
+            title: 'Should have',
+            items: [
+              'Community noticeboard and shared local calendar',
+              'Directory of local organizations with profile pages',
+              'Notifications for new and urgent assignments',
+            ],
+          },
+          {
+            title: 'Could have',
+            items: [
+              'Community forum where residents post small everyday tasks',
+              'Map view of initiatives and local resources',
+              'Knowledge bank with guides and templates',
+            ],
+          },
+          {
+            title: 'Won’t have (for now)',
+            items: [
+              'Crisis-mode dispatching with SMS alarm chains',
+              'Offline and low-bandwidth support for outages',
+              'Native mobile applications',
+            ],
+          },
+        ],
+      },
+      {
+        kicker: 'Information Architecture',
+        heading: 'One structure, three audiences',
+        body: [
+          'One home base branches into six areas: opportunities, noticeboard, forum, a map of assignments and crisis locations, about, and the account area.',
+        ],
+        bullets: [
+          'Opportunities are the core object — everything links back to them',
+          'Community spaces make it a gathering place, not just a listing',
+          'The map adds the crisis-preparedness dimension: see where help is needed',
+        ],
+        images: [
+          {
+            src: asset('/images/volunteer/ia-sitemap.jpg'),
+            alt: 'Sitemap of the Volunteer Portal — six main areas branching from home',
+          },
+        ],
+      },
+      {
+        kicker: 'User Flow',
+        heading: 'From discovery to showing up',
+        body: [
+          'Built for the moment of motivation — the fewer steps from “I want to help” to “I’m signed up,” the more people follow through.',
+        ],
+        timeline: [
+          { phase: 'Discover', detail: 'Browse or search opportunities near you, filtered by cause and time' },
+          { phase: 'Explore', detail: 'See what, when, where — and who is organizing it' },
+          { phase: 'Sign up', detail: 'Commit in a few taps, with a clear confirmation' },
+          { phase: 'Get reminded', detail: 'A nudge before the event keeps the commitment alive' },
+          { phase: 'Participate & continue', detail: 'After the event, related opportunities invite the next step' },
+        ],
+      },
+      {
+        kicker: 'AI-Assisted Ideation',
+        heading: 'I led an AI-powered ideation workshop',
+        body: [
+          'To accelerate the idea phase, I designed and ran a team workshop using UX Pilot — turning structured prompts into first-draft wireframes we then refined together in Figma.',
+        ],
+        bullets: [
+          'Prepared prompt sets for the key screens — home, noticeboard, map, and profile',
+          'Generated mid-fidelity wireframes as shared, editable discussion material',
+          'The whole team could contribute without drawing from scratch — faster alignment, higher momentum',
+        ],
+        quote: 'AI got us from idea to prototype faster — but human iteration made the results relevant',
+      },
+      {
+        kicker: 'Usability Testing',
+        heading: 'Four insights that changed the design',
+        body: [
+          'Twenty-minute think-aloud tests on the three core views. Four findings, each shipped as a concrete change:',
+        ],
+        cards: [
+          {
+            title: '01 · Sign-up felt uncertain',
+            description:
+              'Participants wondered whether their registration had worked. A confirmation screen with direct feedback and clear next steps closed the loop.',
+          },
+          {
+            title: '02 · The consent text overwhelmed',
+            description:
+              'The GDPR section read as a wall of legal text. Restructuring it into short, scannable consent groups made registration feel focused instead of intimidating.',
+          },
+          {
+            title: '03 · Urgent didn’t look urgent',
+            description:
+              'Urgent opportunities were hard to distinguish from regular ones. A distinct color hierarchy and clearer navigation now separate the two at a glance.',
+          },
+          {
+            title: '04 · Star markings were misread',
+            description:
+              'Stars on prioritized noticeboard posts read as “favorites.” A pin with an outline now signals official posts unambiguously.',
+          },
+        ],
+      },
+      {
+        kicker: 'Design System',
+        heading: 'A calm, trustworthy visual language',
+        body: [
+          'Close, calm, and dependable — trustworthy for a municipality, warm for a neighborhood. Anchored by three principles (proximity, clarity, stability): color scales, a Lexend type scale, and a library of reusable components.',
+        ],
+        images: [
+          { src: asset('/images/volunteer/ds-colors.jpg'), alt: 'Design system color scales — primary, secondary, accent, and semantic palettes' },
+          { src: asset('/images/volunteer/ds-typography.jpg'), alt: 'Design system typography scale in Lexend' },
+          { src: asset('/images/volunteer/ds-components.jpg'), alt: 'Button component library — primary, secondary, accent, outlined, text, and semantic states' },
+          { src: asset('/images/volunteer/ds-tags.jpg'), alt: 'Tag component library — filled and outlined pills with states for cause, urgency, and status' },
+        ],
+        imageColumns: 2,
+      },
+      {
+        kicker: 'Final UI',
+        heading: 'The system, brought together',
+        body: [
+          'A responsive, high-fidelity interface — discovery, sign-up, and coordinator tools as one product.',
+        ],
+        images: [
+          { src: asset('/images/volunteer/ui-urgent.jpg'), alt: 'Final UI — urgent opportunities page with clear urgency hierarchy' },
+          { src: asset('/images/volunteer/ui-noticeboard.jpg'), alt: 'Final UI — community noticeboard with posts and current opportunities' },
+          { src: asset('/images/volunteer/ui-responsive.jpg'), alt: 'Final UI — responsive layouts on tablet and mobile' },
+          { src: asset('/images/volunteer/ui-confirmation.jpg'), alt: 'Final UI — sign-up confirmation with clear next steps' },
+        ],
+        imageColumns: 2,
+        imageFrame: true,
+      },
+      {
+        kicker: 'Outcomes',
+        heading: 'What this concept demonstrates',
+        body: [
+          'Handed off with a phased roadmap — organization dashboard, regional coordination, and a rapid-activation crisis mode — showing how it scales beyond the MVP.',
+        ],
+        metrics: [
+          { value: 'AI', label: 'Ideation accelerated with an AI-assisted workshop I led for the team' },
+          { value: '3', label: 'User groups served by one platform' },
+          { value: 'MVP', label: 'Scoped with MoSCoW prioritization' },
+          { value: 'AA', label: 'WCAG accessibility, from the first wireframe' },
+        ],
+        quote: 'Making it easy to help is the first step toward a community that can rely on itself',
+      },
+      {
+        kicker: 'Lessons Learned',
+        heading: 'What I’m taking into the next project',
+        bullets: [
+          'Designing for three audiences at once forces real information-architecture discipline — the structure is the product',
+          'MoSCoW is most valuable as a conversation tool: it turns “nice ideas” into explicit trade-offs',
+          'Accessibility decisions made early cost nothing; the same decisions made late cost redesigns',
+          'Designing for crisis means designing for degraded conditions — offline fallbacks and low-bandwidth support belong on the roadmap even when they sit outside the MVP',
         ],
       },
     ],
