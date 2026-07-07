@@ -31,10 +31,6 @@ export const resume = {
       group: 'Methodologies',
       items: ['Agile methodologies', 'User-Centered Design (UCD)'],
     },
-    {
-      group: 'Other',
-      items: ['Microsoft Dynamics CRM', 'Microsoft Office', 'Microsoft MSP'],
-    },
   ],
   experience: [
     {

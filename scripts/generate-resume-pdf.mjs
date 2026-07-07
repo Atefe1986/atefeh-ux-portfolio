@@ -1,7 +1,7 @@
 // Prints the built /resume page to public/atefeh-etemadipour-resume.pdf (and
 // into dist/ when present, so the current build ships it without a rebuild).
 // Usage: npm run pdf  (runs the build first, then this script)
-import { spawn } from 'node:child_process'
+import { spawn, spawnSync } from 'node:child_process'
 import { copyFileSync, existsSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
@@ -14,6 +14,7 @@ const OUTPUT = path.join(root, 'public', 'atefeh-etemadipour-resume.pdf')
 const server = spawn('npx', ['vite', 'preview', '--port', String(PORT), '--strictPort'], {
   cwd: root,
   stdio: 'pipe',
+  shell: process.platform === 'win32',
 })
 
 try {
@@ -26,9 +27,11 @@ try {
     setTimeout(() => reject(new Error('vite preview did not start within 15s')), 15_000)
   })
 
-  const browser = await puppeteer.launch()
+  const browser = await puppeteer.launch({ channel: 'chrome' }).catch(() => puppeteer.launch())
   const page = await browser.newPage()
-  await page.goto(`http://localhost:${PORT}/resume`, { waitUntil: 'networkidle0' })
+  await page.goto(`http://localhost:${PORT}/atefeh-ux-portfolio/resume`, {
+    waitUntil: 'networkidle0',
+  })
   await page.evaluate(() => document.fonts.ready)
   // Let the entrance animation settle so nothing prints mid-fade
   await new Promise((resolve) => setTimeout(resolve, 800))
@@ -46,5 +49,10 @@ try {
 
   console.log(`PDF written to ${OUTPUT}`)
 } finally {
-  server.kill()
+  if (process.platform === 'win32') {
+    // shell:true wraps vite in a cmd process — kill the whole tree
+    spawnSync('taskkill', ['/pid', String(server.pid), '/T', '/F'])
+  } else {
+    server.kill()
+  }
 }
