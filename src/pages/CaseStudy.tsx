@@ -249,7 +249,7 @@ export default function CaseStudy() {
                       section.imageColumns === 2
                         ? 'mt-8 grid items-start gap-6 sm:grid-cols-2'
                         : section.imageColumns === 3
-                          ? 'mt-8 grid items-start gap-6 sm:grid-cols-3'
+                          ? 'mt-8 grid grid-cols-2 items-start gap-4 sm:grid-cols-3 sm:gap-6'
                           : 'mt-8 space-y-8'
                     }
                   >
