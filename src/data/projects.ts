@@ -465,7 +465,7 @@ export const projects: Project[] = [
       { label: 'Role', value: 'UX/UI Designer' },
       { label: 'Team', value: '5 designers' },
       { label: 'Context', value: 'Study project · Chas Academy' },
-      { label: 'Timeline', value: '7 weeks' },
+      { label: 'Timeline', value: '8 weeks' },
     ],
     sections: [
       {
