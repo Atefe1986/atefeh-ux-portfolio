@@ -15,14 +15,6 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative mx-auto max-w-6xl px-6 pt-24 pb-20 sm:pt-32 sm:pb-28">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
-          className="absolute top-1/2 right-10 hidden -translate-y-1/2 xl:block"
-        >
-          <RotatingBadge className="h-52 w-52" />
-        </motion.div>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -65,6 +57,14 @@ export default function Home() {
           >
             See my work
           </a>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.35 }}
+          className="mt-14 xl:absolute xl:top-1/2 xl:right-10 xl:mt-0 xl:-translate-y-1/2"
+        >
+          <RotatingBadge className="h-40 w-40 xl:h-52 xl:w-52" />
         </motion.div>
       </section>
 
