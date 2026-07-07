@@ -62,7 +62,7 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="mt-14 xl:absolute xl:top-1/2 xl:right-10 xl:mt-0 xl:-translate-y-1/2"
+          className="mt-14 flex justify-center xl:absolute xl:top-1/2 xl:right-10 xl:mt-0 xl:block xl:-translate-y-1/2"
         >
           <RotatingBadge className="h-40 w-40 xl:h-52 xl:w-52" />
         </motion.div>
@@ -118,7 +118,7 @@ export default function Home() {
               src={site.about.portrait.src}
               alt={site.about.portrait.alt}
               loading="lazy"
-              className="w-full max-w-sm rounded-xl"
+              className="mx-auto w-full max-w-sm rounded-xl lg:mx-0"
             />
           </Reveal>
           <Reveal delay={0.1}>
