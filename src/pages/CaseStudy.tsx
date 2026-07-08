@@ -37,6 +37,11 @@ export default function CaseStudy() {
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
             {project.subtitle}
           </p>
+          {project.period && (
+            <p className="mt-5 text-xs font-semibold tracking-[0.18em] text-ink-faint uppercase">
+              {project.period}
+            </p>
+          )}
           {(project.liveDemo || project.prototypeUrl || project.figmaFileUrl) && (
             <div className="mt-8 flex flex-wrap items-center gap-4">
               {(project.liveDemo || project.prototypeUrl) && (

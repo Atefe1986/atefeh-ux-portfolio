@@ -58,6 +58,7 @@ export interface Project {
   category: string
   summary: string
   hero: ProjectImage
+  period?: string
   liveDemo?: string
   prototypeUrl?: string
   figmaFileUrl?: string
@@ -79,6 +80,7 @@ export const projects: Project[] = [
       src: asset('/images/techlove-hero.jpg'),
       alt: 'Techlove.se homepage shown on laptop and phone',
     },
+    period: 'December 2025 – March 2026',
     liveDemo: 'https://techlove.se',
     facts: [
       { label: 'Role', value: 'UX/UI Design Intern' },
@@ -309,6 +311,7 @@ export const projects: Project[] = [
     summary:
       'Design and development of a landing page for a Kenyan gig-economy platform, focused on simplicity, trust, and accessibility.',
     hero: { src: asset('/images/kazify-hero.png'), alt: 'Kazify landing page design' },
+    period: 'December 2025 – February 2026',
     liveDemo: 'https://kazify-web.pages.dev',
     sections: [
       {
@@ -334,6 +337,7 @@ export const projects: Project[] = [
     summary:
       'A detailed case study of an app that centralizes parent–preschool communication, from research and user segmentation to tested, iterated high-fidelity screens.',
     hero: { src: asset('/images/kiddolink-hero.png'), alt: 'Kiddolink app screens overview' },
+    period: 'March – May 2025',
     sections: [
       {
         kicker: 'Overview',
@@ -460,6 +464,7 @@ export const projects: Project[] = [
       src: asset('/images/volunteer/hero.jpg'),
       alt: 'Volunteer Portal homepage on laptop and mobile uppdrag screen on phone',
     },
+    period: 'September – November 2025',
     prototypeUrl:
       'https://www.figma.com/proto/McejSqI4krx5Ag8Wb5t9Oc/Volont%C3%A4rpool--gmail--last-version?node-id=755-9961&t=ITt8oC84CKMQk5ac-1&scaling=scale-down&content-scaling=fixed&page-id=752%3A8949&starting-point-node-id=755%3A9961',
     figmaFileUrl:
@@ -748,6 +753,7 @@ export const projects: Project[] = [
     summary:
       'A responsive e-commerce platform for modern lighting, designed around effortless product discovery, side-by-side comparison, and in-home visualization.',
     hero: { src: asset('/images/luminova-hero.png'), alt: 'Luminova e-commerce website screens' },
+    period: 'October – November 2024',
     sections: [
       {
         kicker: 'Overview',
