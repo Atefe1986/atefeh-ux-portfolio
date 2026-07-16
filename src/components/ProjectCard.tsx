@@ -3,6 +3,7 @@ import type { Project } from '../data/projects'
 
 export default function ProjectCard({ project }: { project: Project }) {
   const isCaseStudy = project.category.includes('Case Study')
+  const cover = project.thumbnail ?? project.hero
   return (
     <Link
       to={`/work/${project.slug}`}
@@ -10,8 +11,8 @@ export default function ProjectCard({ project }: { project: Project }) {
     >
       <div className="overflow-hidden rounded-xl bg-surface">
         <img
-          src={project.hero.src}
-          alt={project.hero.alt}
+          src={cover.src}
+          alt={cover.alt}
           loading="lazy"
           className="aspect-video w-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.03]"
         />

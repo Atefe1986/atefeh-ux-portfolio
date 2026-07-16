@@ -3,6 +3,7 @@ import { asset } from '../lib/asset'
 export interface ProjectImage {
   src: string
   alt: string
+  caption?: string
 }
 
 export interface ProjectMetric {
@@ -36,6 +37,7 @@ export interface SectionCard {
 export interface ProjectSection {
   kicker?: string
   heading: string
+  highlight?: boolean
   body?: string[]
   bullets?: string[]
   quote?: string
@@ -58,6 +60,8 @@ export interface Project {
   category: string
   summary: string
   hero: ProjectImage
+  thumbnail?: ProjectImage
+  tags?: string[]
   period?: string
   liveDemo?: string
   prototypeUrl?: string
@@ -328,125 +332,308 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: 'kiddolink',
-    title: 'Kiddolink',
-    tagline: 'All-in-One App for Parent–Preschool Communication',
+    slug: 'holistal',
+    title: 'Holistal',
+    tagline: 'A Calm, Private Space for Workplace Wellbeing',
     subtitle:
-      'One clear place for parents to stay updated — no more scattered tools or clunky UIs.',
-    category: 'Mobile App · UX/UI Case Study',
+      'A digital health-coaching platform where employees get a private wellbeing score and 1:1 human coaching — and employers only ever see anonymised, aggregated insight.',
+    category: 'Digital Health · UX/UI Design',
     summary:
-      'A detailed case study of an app that centralizes parent–preschool communication, from research and user segmentation to tested, iterated high-fidelity screens.',
-    hero: { src: asset('/images/kiddolink-hero.png'), alt: 'Kiddolink app screens overview' },
-    period: 'March – May 2025',
+      'A five-week degree project designing the Employee Dashboard MVP for a workplace wellbeing platform — research-led, privacy-first, and prototyped with Claude Code.',
+    hero: {
+      src: asset('/images/holistal/hero.jpg'),
+      alt: 'Holistal — support for your wellbeing, completely confidential',
+    },
+    thumbnail: {
+      src: asset('/images/holistal/holistal-devices.jpg'),
+      alt: 'Holistal employee dashboard shown on desktop and mobile',
+    },
+    tags: [
+      'UX Research',
+      'UX/UI Design',
+      'Design System',
+      'Responsive Design',
+      'Interactive Prototype',
+      'AI-assisted Prototyping',
+    ],
+    period: 'April – May 2026',
+    prototypeUrl:
+      'https://atefe1986.github.io/holistal-examenarbete/prototypes/user_flow/desktop.html',
+    facts: [
+      { label: 'Role', value: 'UX Research · UX/UI · IA · Prototyping' },
+      { label: 'Team', value: '2 UX Designers' },
+      { label: 'Timeline', value: '5 weeks' },
+      { label: 'Scope', value: 'Employee Dashboard MVP' },
+    ],
     sections: [
       {
         kicker: 'Overview',
-        heading: 'An iterative, user-centered process',
+        heading: 'A sanctuary for wellbeing — not another chore',
         body: [
-          'The UX process for Kiddolink followed an iterative, user-centered approach structured around agile sprints. Since the app was designed for both preschool staff and parents, it was important to consider their distinct communication behaviours and pain points.',
+          'Holistal is a workplace platform (in development) for digital health coaching, connecting employees with professional coaches to support wellbeing in working life. The employee is the primary end-user — the person who uses the service day to day to understand their wellbeing, book coaching, and follow their own progress. Employers only ever see aggregated, anonymised insight.',
+          'This was a five-week degree project (examensarbete) by two UX designers. To ship something real in the time we had, we scoped tightly to a single surface — the employee dashboard — and validated it end to end.',
         ],
-        images: [
-          { src: asset('/images/kiddolink-ux-process.png'), alt: 'Kiddolink UX process overview' },
+      },
+      {
+        kicker: 'The Challenge',
+        heading: 'Designing for trust, under a five-week clock',
+        body: [
+          'Wellbeing tools live or die on trust. The moment an employee suspects their employer can see personal data — or that a bot is reading their feelings — they leave. The challenge was to earn that trust quickly, and prove the core experience within a tight timeline.',
         ],
+        bullets: [
+          'Make onboarding feel effortless — real value in under three minutes',
+          'Help employees genuinely understand and improve their wellbeing',
+          'Design an experience that reads as trustworthy and privacy-first',
+          'Deliver a validated MVP within a five-week timeline',
+        ],
+        quote: 'The hardest thing to design here wasn’t a screen — it was trust',
       },
       {
         kicker: 'Research',
-        heading: 'Research goals',
+        heading: 'Six interviews and a survey, distilled',
         body: [
-          'To understand how to improve communication between preschool staff and parents, we focused our research on the following questions:',
+          'We combined qualitative and quantitative research — six in-depth interviews planned and documented in Notion, and a 31-person survey run through Google Forms. The signal was strong: 61% named stress as their biggest challenge, and just as many said lack of time was the biggest barrier to seeking support. We were designing for people who are stressed, sceptical, and new to coaching.',
         ],
-        bullets: [
-          'How do parents currently receive updates about their child’s day?',
-          'What pain points exist in current communication methods?',
-          'What makes parents feel informed, connected, and emotionally supported?',
-          'How do different behaviour types (digital vs. communicative) affect their expectations?',
+        metrics: [
+          { value: '6', label: 'In-depth interviews' },
+          { value: '31', label: 'Survey responses' },
+          { value: '74%', label: 'Say work negatively affects their wellbeing' },
+          { value: '68%', label: 'Had never used a coaching service before' },
         ],
-        quote: 'Fragmented tools and poor UI frustrate preschool parents',
       },
       {
-        kicker: 'Research',
-        heading: 'Uncovering insights from parent interviews',
+        kicker: 'Personas',
+        heading: 'Three people we designed for',
         body: [
-          'We conducted in-depth interviews with seven parents and two staff to uncover everyday communication challenges in preschool settings. These insights became the foundation for defining user types and shaping the Kiddolink app’s core features.',
-          'This overview table summarizes all our interview participants — their roles, motivations, behaviours, types, wishes and challenges. We used it to identify needs, categorize user types and shape our solution. It also highlights the variation in users’ technical skills, daily routines and preferences.',
+          'From the research we identified three behaviour types. They captured the range of motivations — and kept the team honest about trade-offs on every decision that followed.',
         ],
-        images: [
+        cards: [
           {
-            src: asset('/images/kiddolink-interview-table.png'),
-            alt: 'Overview table of interview participants, their roles, motivations and challenges',
+            title: 'The Security-Seeker',
+            description:
+              'Needs to feel in control of their data and an interface that is transparent and professional. “The employer must never get access to anything.”',
+          },
+          {
+            title: 'The Analytical',
+            description:
+              'Wants to understand their wellbeing in depth and expects proven human expertise. “The slightest sign of AI and I leave.”',
+          },
+          {
+            title: 'The Results-Oriented',
+            description:
+              'Motivated by visible progress; needs clear feedback and quick guidance. “If I see results, I keep going.”',
           },
         ],
       },
       {
-        kicker: 'Insights',
-        heading: 'User insights that shaped the MVP',
-        bullets: [
-          'A need for centralized and clear communication',
-          'Different user behaviours require tailored solutions',
-          'Poor interface design leads to frustration and reduces trust',
-        ],
-        images: [
+        kicker: 'Key Insights',
+        heading: 'What the research made non-negotiable',
+        cards: [
           {
-            src: asset('/images/kiddolink-user-insights.png'),
-            alt: 'Key user insights that shaped the Kiddolink MVP',
+            title: '01 · Privacy builds trust',
+            description:
+              'Trust in data protection was a baseline requirement. A visible promise — “HR never sees your content,” plus BankID and GDPR — had to lead every screen. “The employer must never get access to anything.”',
+          },
+          {
+            title: '02 · Simplicity reduces friction',
+            description:
+              '“Onboarding over three minutes is a red flag.” People are time-poor, so the service had to feel fast and clear from the very first second.',
+          },
+          {
+            title: '03 · Human coaching over AI',
+            description:
+              '“The slightest sign of AI and I leave.” Users wanted certified human coaches — never chatbots — in every part of the conversation.',
+          },
+          {
+            title: '04 · Visible progress motivates',
+            description:
+              '“If I see results, I keep going.” Progress and feedback — a rising score, met goals — are what turn a one-off visit into a lasting habit.',
           },
         ],
       },
       {
-        kicker: 'Design',
-        heading: 'From idea to interface',
+        kicker: 'Process',
+        heading: 'A lean, linear path to a validated MVP',
         body: [
-          'The Kiddolink prototype evolved from wireframes designed to reflect the needs of busy and communicative parents. Each screen focused on intuitive navigation, visual hierarchy, and responsive design.',
+          'With only five weeks, the process stayed disciplined across four phases — research, concept, design, and AI-assisted iteration — each feeding directly into the next, and user-centered from the start.',
         ],
-        images: [
-          { src: asset('/images/kiddolink-wireframes-1.png'), alt: 'Kiddolink wireframes — first set' },
-          { src: asset('/images/kiddolink-wireframes-2.png'), alt: 'Kiddolink wireframes — second set' },
-        ],
-      },
-      {
-        kicker: 'Design',
-        heading: 'High-fidelity UI screens',
-        body: [
-          'These screens reflect the final visual style, branding, and responsive layout of the Kiddolink MVP.',
-        ],
-        images: [
+        timeline: [
           {
-            src: asset('/images/kiddolink-hifi-screens.png'),
-            alt: 'Kiddolink high-fidelity UI screens',
+            phase: 'Research',
+            detail: 'Six in-depth interviews (planned in Notion) and a 31-person Google Forms survey',
+          },
+          { phase: 'Personas', detail: 'Six interviewees consolidated into three behaviour types' },
+          {
+            phase: 'Value Proposition Canvas',
+            detail: 'Mapping each user need to a concrete part of the solution',
+          },
+          {
+            phase: 'MoSCoW Prioritisation',
+            detail: 'Scoping the MVP around wellbeing score, progress, coaching, and data security',
+          },
+          {
+            phase: 'User Flows & Wireframes',
+            detail: 'The shortest path from “How am I doing?” to action, structured in Figma',
+          },
+          { phase: 'High-Fidelity UI', detail: 'Polished, on-brand screens designed in Figma' },
+          {
+            phase: 'Interactive Prototype',
+            detail: 'Figma designs turned into a working prototype with Claude Code',
           },
         ],
       },
       {
-        kicker: 'Validation',
-        heading: 'Validating with users',
+        kicker: 'User Flow',
+        heading: 'One journey, four questions',
         body: [
-          'We tested the prototype with both behavioural user types — “digital check-in” and “communicative” — using in-person guerrilla testing and remote sessions via Useberry. Tasks included checking the daily plan, sending messages, and reporting absence.',
-          'Through observation and screen recording, we identified areas of friction in navigation, communication clarity, and flow logic. The feedback directly informed design iterations.',
+          'The employee experience was organised around four questions — How am I doing? What should I do today? Am I improving? Can I trust this? — mapped across public, onboarding, and daily-hub screens.',
         ],
+        imageFrame: true,
         images: [
-          { src: asset('/images/kiddolink-testing.png'), alt: 'Usability testing sessions for Kiddolink' },
+          {
+            src: asset('/images/holistal/flow.jpg'),
+            alt: 'Regular-employee user-flow map — 9 screens across public, onboarding, app hub, app pages, and coaching flows',
+            caption:
+              'The full employee flow: a low-friction path from landing and BankID onboarding (under three minutes) to the daily dashboard and coaching.',
+          },
         ],
       },
       {
-        kicker: 'Iteration',
-        heading: 'From testing to continuous improvement',
-        body: ['Here are the key changes we made after testing:'],
-        bullets: [
-          '“Full Day” vs. “Custom” was unclear — so we clarified layout and labels',
-          'Child 1/2 buttons were replaced with checkboxes, which users understood instantly',
-          'Blue buttons improved accessibility and readability — so we kept them',
-          'The calendar was slightly adjusted to better align with the checkbox layout',
-          'Absent status is now marked in red to stand out during quick scans',
-          'News cards are now fully clickable (not just the text) — based on click data and heatmaps',
+        kicker: 'AI-assisted Prototyping',
+        heading: 'Claude Code turned our Figma into a real prototype',
+        highlight: true,
+        body: [
+          'Because the whole project lasted only five weeks, we deliberately combined traditional UX methods with AI-assisted development. The workflow ran from UX research, interviews, and survey analysis into wireframes and high-fidelity UI in Figma — and then into a working, interactive prototype built with Claude Code.',
+          'Instead of spending scarce project time hand-coding every interaction, we used Claude Code to rapidly transform our Figma designs into an interactive prototype. That accelerated the prototyping phase dramatically and gave us more time for what actually matters: validating user flows, refining interactions, and improving the overall experience.',
         ],
+        bullets: [
+          'UX research · interviews · survey analysis',
+          'Wireframes and high-fidelity UI in Figma',
+          'Interactive prototype built with Claude Code',
+          'AI as a productivity multiplier — the UX thinking stayed human',
+        ],
+        imageFrame: true,
+        images: [
+          {
+            src: asset('/images/holistal/change-coach.jpg'),
+            alt: 'Interactive coach-switching flow built with Claude Code',
+            caption:
+              'Real, clickable flows — like privately switching coach — were prototyped in Claude Code straight from our Figma designs.',
+          },
+        ],
+        quote: 'AI didn’t replace the design thinking — it gave us more time to do it',
+      },
+      {
+        kicker: 'Solution',
+        heading: 'The Employee Dashboard MVP',
+        body: [
+          'We designed one surface, thoroughly. The dashboard answers “How am I doing?” at a glance — a wellbeing score, five colour-coded health dimensions, today’s next step, and a privacy promise that never leaves the screen.',
+        ],
+        imageFrame: true,
+        images: [
+          {
+            src: asset('/images/holistal/dashboard.jpg'),
+            alt: 'Holistal employee dashboard — wellbeing dimensions, weekly activity, coach and sessions',
+            caption:
+              'Dashboard — five wellbeing dimensions, this week’s activity, and an always-visible “HR never sees your individual data” strip.',
+          },
+        ],
+      },
+      {
+        kicker: 'Solution',
+        heading: 'Coaching, on the employee’s terms',
+        body: [
+          'Coaching centres on one consistent, licensed human coach. From here an employee can book a session, message their coach, review recommendations, and keep private notes — with Overview, History, and Notes kept clearly separate.',
+        ],
+        imageFrame: true,
+        images: [
+          {
+            src: asset('/images/holistal/coaching.jpg'),
+            alt: 'Holistal coaching screen — coach profile, recommendations, upcoming sessions, and notes',
+            caption:
+              'Coaching — the same coach every time, personal recommendations, and Overview / History / Notes tabs.',
+          },
+        ],
+      },
+      {
+        kicker: 'Design System',
+        heading: 'A calm, dependable system',
+        body: [
+          'A calm teal-and-peach palette, DM Sans, and a 4px spacing grid form a system built for trust: soft elevation instead of hard shadows, colour-coded wellbeing states, and components documented from tokens to cards.',
+        ],
+        metrics: [
+          { value: '2', label: 'Core palettes — calm teal + warm peach' },
+          { value: 'DM Sans', label: 'Typography scale' },
+          { value: '4px', label: 'Spacing & radius base grid' },
+          { value: 'AA', label: 'Accessible wellbeing status colours' },
+        ],
+        imageColumns: 2,
+        images: [
+          {
+            src: asset('/images/holistal/ds-colors.jpg'),
+            alt: 'Holistal colour palette — teal scale, peach and cream, and semantic wellbeing status',
+            caption: 'Palette — teal, peach & cream, and semantic wellbeing status.',
+          },
+          {
+            src: asset('/images/holistal/ds-typography.jpg'),
+            alt: 'Holistal typography scale in DM Sans — display to caption',
+            caption: 'Type — DM Sans, from display to caption.',
+          },
+          {
+            src: asset('/images/holistal/ds-buttons.jpg'),
+            alt: 'Holistal button styles — primary, secondary, ghost, dark, and pill CTAs',
+            caption: 'Buttons — primary, secondary, ghost, dark, and pill CTAs.',
+          },
+          {
+            src: asset('/images/holistal/ds-tags.jpg'),
+            alt: 'Holistal tags and badges — status pills, skill tags, streaks, and privacy labels',
+            caption: 'Tags & badges — status pills, skills, streaks, and privacy labels.',
+          },
+        ],
+      },
+      {
+        kicker: 'Responsive',
+        heading: 'One experience, every screen',
+        body: [
+          'The dashboard was designed desktop-first as a calm three-column layout, then reflowed into a single, focused scroll on mobile with a fixed bottom nav — the five health dimensions first, coaching next.',
+        ],
+        images: [
+          {
+            src: asset('/images/holistal/holistal-devices.jpg'),
+            alt: 'Holistal employee dashboard shown on desktop and mobile',
+            caption:
+              'Desktop three-column layout and the mobile single-scroll with fixed bottom navigation.',
+          },
+        ],
+      },
+      {
+        kicker: 'Interactive Prototype',
+        heading: 'Key flows, clickable and real',
+        body: [
+          'The prototype focused on the moments that matter most — booking a coaching session and managing it privately. Built in Claude Code from the Figma UI, it let us test the real feel of the flows, not just static screens.',
+        ],
+        imageFrame: true,
+        images: [
+          {
+            src: asset('/images/holistal/booking.jpg'),
+            alt: 'Holistal booking flow — choose a date, time, and session type',
+            caption:
+              'Booking a session — choose a date and time, pick video or chat, add an optional note, and confirm.',
+          },
+        ],
+      },
+      {
+        kicker: 'Reflection',
+        heading: 'What I’m taking from Holistal',
+        bullets: [
+          'Under a tight timeline, prioritisation is the design — deciding what not to build protected the core.',
+          'An MVP is a complete idea at a smaller scope, not an unfinished product — one surface done well beats five done thinly.',
+          'Combining traditional UX with AI-assisted prototyping bought back days — time we reinvested in validation and iteration.',
+          'Staying user-centered throughout kept AI in its place: a tool that served the research, never a shortcut around it.',
+        ],
+        quote: 'Scope less, validate more — and let AI handle the parts that aren’t the thinking',
         outro: [
-          'By iterating quickly based on user feedback, we were able to improve clarity, accessibility, and the overall experience — a crucial step in our UX process.',
-        ],
-        images: [
-          {
-            src: asset('/images/kiddolink-test-iterations.png'),
-            alt: 'Before-and-after design iterations from usability testing',
-          },
+          'Next steps: user-test the prototype, iterate on the feedback, extend the design to the coach and HR views, and validate the solution with a real-world pilot.',
         ],
       },
     ],
@@ -739,6 +926,130 @@ export const projects: Project[] = [
           'MoSCoW is most valuable as a conversation tool: it turns “nice ideas” into explicit trade-offs',
           'Accessibility decisions made early cost nothing; the same decisions made late cost redesigns',
           'Designing for crisis means designing for degraded conditions — offline fallbacks and low-bandwidth support belong on the roadmap even when they sit outside the MVP',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'kiddolink',
+    title: 'Kiddolink',
+    tagline: 'All-in-One App for Parent–Preschool Communication',
+    subtitle:
+      'One clear place for parents to stay updated — no more scattered tools or clunky UIs.',
+    category: 'Mobile App · UX/UI Case Study',
+    summary:
+      'A detailed case study of an app that centralizes parent–preschool communication, from research and user segmentation to tested, iterated high-fidelity screens.',
+    hero: { src: asset('/images/kiddolink-hero.png'), alt: 'Kiddolink app screens overview' },
+    period: 'March – May 2025',
+    sections: [
+      {
+        kicker: 'Overview',
+        heading: 'An iterative, user-centered process',
+        body: [
+          'The UX process for Kiddolink followed an iterative, user-centered approach structured around agile sprints. Since the app was designed for both preschool staff and parents, it was important to consider their distinct communication behaviours and pain points.',
+        ],
+        images: [
+          { src: asset('/images/kiddolink-ux-process.png'), alt: 'Kiddolink UX process overview' },
+        ],
+      },
+      {
+        kicker: 'Research',
+        heading: 'Research goals',
+        body: [
+          'To understand how to improve communication between preschool staff and parents, we focused our research on the following questions:',
+        ],
+        bullets: [
+          'How do parents currently receive updates about their child’s day?',
+          'What pain points exist in current communication methods?',
+          'What makes parents feel informed, connected, and emotionally supported?',
+          'How do different behaviour types (digital vs. communicative) affect their expectations?',
+        ],
+        quote: 'Fragmented tools and poor UI frustrate preschool parents',
+      },
+      {
+        kicker: 'Research',
+        heading: 'Uncovering insights from parent interviews',
+        body: [
+          'We conducted in-depth interviews with seven parents and two staff to uncover everyday communication challenges in preschool settings. These insights became the foundation for defining user types and shaping the Kiddolink app’s core features.',
+          'This overview table summarizes all our interview participants — their roles, motivations, behaviours, types, wishes and challenges. We used it to identify needs, categorize user types and shape our solution. It also highlights the variation in users’ technical skills, daily routines and preferences.',
+        ],
+        images: [
+          {
+            src: asset('/images/kiddolink-interview-table.png'),
+            alt: 'Overview table of interview participants, their roles, motivations and challenges',
+          },
+        ],
+      },
+      {
+        kicker: 'Insights',
+        heading: 'User insights that shaped the MVP',
+        bullets: [
+          'A need for centralized and clear communication',
+          'Different user behaviours require tailored solutions',
+          'Poor interface design leads to frustration and reduces trust',
+        ],
+        images: [
+          {
+            src: asset('/images/kiddolink-user-insights.png'),
+            alt: 'Key user insights that shaped the Kiddolink MVP',
+          },
+        ],
+      },
+      {
+        kicker: 'Design',
+        heading: 'From idea to interface',
+        body: [
+          'The Kiddolink prototype evolved from wireframes designed to reflect the needs of busy and communicative parents. Each screen focused on intuitive navigation, visual hierarchy, and responsive design.',
+        ],
+        images: [
+          { src: asset('/images/kiddolink-wireframes-1.png'), alt: 'Kiddolink wireframes — first set' },
+          { src: asset('/images/kiddolink-wireframes-2.png'), alt: 'Kiddolink wireframes — second set' },
+        ],
+      },
+      {
+        kicker: 'Design',
+        heading: 'High-fidelity UI screens',
+        body: [
+          'These screens reflect the final visual style, branding, and responsive layout of the Kiddolink MVP.',
+        ],
+        images: [
+          {
+            src: asset('/images/kiddolink-hifi-screens.png'),
+            alt: 'Kiddolink high-fidelity UI screens',
+          },
+        ],
+      },
+      {
+        kicker: 'Validation',
+        heading: 'Validating with users',
+        body: [
+          'We tested the prototype with both behavioural user types — “digital check-in” and “communicative” — using in-person guerrilla testing and remote sessions via Useberry. Tasks included checking the daily plan, sending messages, and reporting absence.',
+          'Through observation and screen recording, we identified areas of friction in navigation, communication clarity, and flow logic. The feedback directly informed design iterations.',
+        ],
+        images: [
+          { src: asset('/images/kiddolink-testing.png'), alt: 'Usability testing sessions for Kiddolink' },
+        ],
+      },
+      {
+        kicker: 'Iteration',
+        heading: 'From testing to continuous improvement',
+        body: ['Here are the key changes we made after testing:'],
+        bullets: [
+          '“Full Day” vs. “Custom” was unclear — so we clarified layout and labels',
+          'Child 1/2 buttons were replaced with checkboxes, which users understood instantly',
+          'Blue buttons improved accessibility and readability — so we kept them',
+          'The calendar was slightly adjusted to better align with the checkbox layout',
+          'Absent status is now marked in red to stand out during quick scans',
+          'News cards are now fully clickable (not just the text) — based on click data and heatmaps',
+        ],
+        outro: [
+          'By iterating quickly based on user feedback, we were able to improve clarity, accessibility, and the overall experience — a crucial step in our UX process.',
+        ],
+        images: [
+          {
+            src: asset('/images/kiddolink-test-iterations.png'),
+            alt: 'Before-and-after design iterations from usability testing',
+          },
         ],
       },
     ],

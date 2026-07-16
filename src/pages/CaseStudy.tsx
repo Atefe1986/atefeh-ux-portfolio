@@ -42,6 +42,18 @@ export default function CaseStudy() {
               {project.period}
             </p>
           )}
+          {project.tags && (
+            <ul className="mt-6 flex flex-wrap gap-2.5">
+              {project.tags.map((tag) => (
+                <li
+                  key={tag}
+                  className="rounded-full border border-line bg-surface/60 px-4 py-1.5 text-xs font-medium tracking-wide text-ink-soft"
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          )}
           {(project.liveDemo || project.prototypeUrl || project.figmaFileUrl) && (
             <div className="mt-8 flex flex-wrap items-center gap-4">
               {(project.liveDemo || project.prototypeUrl) && (
@@ -97,8 +109,21 @@ export default function CaseStudy() {
       {/* Narrative sections */}
       <div className="mx-auto max-w-6xl px-6">
         {project.sections.map((section) => (
-          <Reveal key={section.heading} className="border-b border-line py-20 last:border-b-0">
-            <section className="grid gap-10 lg:grid-cols-[1fr_2fr]">
+          <Reveal
+            key={section.heading}
+            className={
+              section.highlight
+                ? 'py-8 first:pt-16'
+                : 'border-b border-line py-20 last:border-b-0'
+            }
+          >
+            <section
+              className={
+                section.highlight
+                  ? 'grid gap-10 rounded-2xl border border-line bg-surface/70 p-8 sm:p-12 lg:grid-cols-[1fr_2fr]'
+                  : 'grid gap-10 lg:grid-cols-[1fr_2fr]'
+              }
+            >
               <div>
                 {section.kicker && (
                   <p className="text-xs font-semibold tracking-[0.2em] text-accent uppercase">
@@ -273,17 +298,23 @@ export default function CaseStudy() {
                     }
                   >
                     {section.images.map((image) => (
-                      <img
-                        key={image.src}
-                        src={image.src}
-                        alt={image.alt}
-                        loading="lazy"
-                        className={
-                          section.imageFrame
-                            ? 'w-full rounded-xl border border-line bg-surface shadow-[0_16px_40px_rgba(25,28,31,0.14)]'
-                            : 'w-full rounded-xl bg-surface'
-                        }
-                      />
+                      <figure key={image.src} className="m-0">
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          loading="lazy"
+                          className={
+                            section.imageFrame
+                              ? 'w-full rounded-xl border border-line bg-surface shadow-[0_16px_40px_rgba(25,28,31,0.14)]'
+                              : 'w-full rounded-xl bg-surface'
+                          }
+                        />
+                        {image.caption && (
+                          <figcaption className="mt-3 text-sm leading-relaxed text-ink-faint">
+                            {image.caption}
+                          </figcaption>
+                        )}
+                      </figure>
                     ))}
                   </div>
                 )}
