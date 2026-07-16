@@ -96,16 +96,6 @@ export default function Home() {
               <ProjectCard project={project} />
             </Reveal>
           ))}
-          <Reveal delay={0.1}>
-            <div className="flex aspect-[4/3] flex-col items-start justify-end rounded-xl border border-dashed border-line bg-surface/40 p-8">
-              <p className="text-xs font-semibold tracking-[0.18em] text-ink-faint uppercase">
-                Coming soon
-              </p>
-              <h3 className="mt-2 font-display text-2xl font-medium tracking-tight text-ink-soft">
-                A standout project showcasing creativity
-              </h3>
-            </div>
-          </Reveal>
         </div>
       </section>
 
