@@ -40,6 +40,11 @@ export default function Resume() {
             </a>
           </li>
           <li>
+            <a href={site.portfolio} target="_blank" rel="noreferrer" className="hover:text-accent">
+              Portfolio
+            </a>
+          </li>
+          <li>
             <a href={site.linkedin} target="_blank" rel="noreferrer" className="hover:text-accent">
               LinkedIn
             </a>
@@ -196,7 +201,7 @@ export default function Resume() {
                       rel="noreferrer"
                       className="mt-1.5 inline-block text-sm font-medium text-accent hover:text-accent-deep print:mt-0.5 print:text-xs"
                     >
-                      {project.link.replace('https://', '').replace(/\/$/, '')} ↗
+                      {project.linkLabel ?? project.link.replace('https://', '').replace(/\/$/, '')} ↗
                     </a>
                   )}
                 </li>

@@ -7,6 +7,7 @@ export const site = {
   email: 'atefeh.etemadipour@gmail.com',
   github: 'https://github.com/Atefe1986',
   linkedin: 'https://www.linkedin.com/in/atefeh-etemadipour/',
+  portfolio: 'https://atefe1986.github.io/atefeh-ux-portfolio/',
   resumePdf: asset('/atefeh-etemadipour-resume.pdf'),
   logo: { src: asset('/images/logo.png'), alt: 'Atefeh Etemadipour logo' },
   hero: {
