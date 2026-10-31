@@ -108,6 +108,14 @@ export const resume = {
       linkLabel: 'View project',
     },
     {
+      name: 'Metis — Website, Design System & Brand',
+      context: 'Techlove',
+      description:
+        'Designed the website, design system, brand guidelines and social launch campaign for Metis, Techlove’s autonomous AI debugging agent. Connected Figma to Claude Code through the Figma MCP to turn the designs into a working React code base, which I handed over to the developers to build the live site.',
+      link: 'https://atefe1986.github.io/atefeh-ux-portfolio/work/metis',
+      linkLabel: 'View project',
+    },
+    {
       name: 'Holistal — Employee Wellbeing Platform',
       context: 'Degree Project',
       description:
