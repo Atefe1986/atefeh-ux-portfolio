@@ -1,15 +1,21 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import SectionHeading from '../components/SectionHeading'
 import ProjectCard from '../components/ProjectCard'
+import FeaturedProjectCard from '../components/FeaturedProjectCard'
 import RotatingBadge from '../components/RotatingBadge'
 import { projects } from '../data/projects'
 import { site } from '../data/site'
 import usePageTitle from '../hooks/usePageTitle'
 
+const featuredProjects = projects.filter((project) => project.featured)
+const mainProjects = projects.filter((project) => !project.featured && !project.more)
+const moreProjects = projects.filter((project) => !project.featured && project.more)
+
 export default function Home() {
   usePageTitle(`${site.name} — ${site.role}`)
+  const [showMore, setShowMore] = useState(false)
 
   return (
     <>
@@ -90,42 +96,51 @@ export default function Home() {
         <Reveal>
           <SectionHeading id="work" kicker="Selected Work" title="Case studies & projects" />
         </Reveal>
+        {featuredProjects.map((project) => (
+          <Reveal key={project.slug} className="mb-20">
+            <FeaturedProjectCard project={project} />
+          </Reveal>
+        ))}
         <div className="grid gap-x-10 gap-y-16 sm:grid-cols-2">
-          {projects.map((project, i) => (
+          {mainProjects.map((project, i) => (
             <Reveal key={project.slug} delay={(i % 2) * 0.1}>
               <ProjectCard project={project} />
             </Reveal>
           ))}
         </div>
+        {moreProjects.length > 0 && (
+          <>
+            {showMore && (
+              <div id="more-projects" className="mt-16 grid gap-x-10 gap-y-16 sm:grid-cols-2">
+                {moreProjects.map((project, i) => (
+                  <Reveal key={project.slug} delay={(i % 2) * 0.1}>
+                    <ProjectCard project={project} />
+                  </Reveal>
+                ))}
+              </div>
+            )}
+            <div className="mt-16 flex justify-center">
+              <button
+                type="button"
+                aria-expanded={showMore}
+                aria-controls="more-projects"
+                onClick={() => setShowMore((open) => !open)}
+                className="inline-flex items-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-medium text-ink-soft transition-colors hover:border-accent hover:text-accent"
+              >
+                {showMore ? 'Show fewer projects' : `Show more projects (${moreProjects.length})`}
+                <span
+                  aria-hidden="true"
+                  className={`transition-transform ${showMore ? 'rotate-180' : ''}`}
+                >
+                  ↓
+                </span>
+              </button>
+            </div>
+          </>
+        )}
       </section>
 
-      {/* About */}
-      <section className="border-y border-line bg-surface/50">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 lg:grid-cols-[2fr_3fr]">
-          <Reveal>
-            <SectionHeading id="about" kicker="About Me" title="Design with an analytical mind" />
-            <img
-              src={site.about.portrait.src}
-              alt={site.about.portrait.alt}
-              loading="lazy"
-              className="mx-auto w-full max-w-sm rounded-xl lg:mx-0"
-            />
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="space-y-5 text-base leading-relaxed text-ink-soft">
-              {site.about.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 32)}>{paragraph}</p>
-              ))}
-            </div>
-            <Link
-              to="/resume"
-              className="mt-8 inline-block rounded-full border border-ink px-6 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
-            >
-              View my resume
-            </Link>
-          </Reveal>
-        </div>
-      </section>
+      <hr className="border-line" />
 
       {/* Contact */}
       <section className="mx-auto max-w-6xl px-6 py-28">

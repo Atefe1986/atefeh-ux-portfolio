@@ -4,7 +4,7 @@ import { site } from '../data/site'
 
 const links = [
   { label: 'Work', to: '/#work' },
-  { label: 'About', to: '/#about' },
+  { label: 'About', to: '/about' },
   { label: 'Contact', to: '/#contact' },
 ]
 

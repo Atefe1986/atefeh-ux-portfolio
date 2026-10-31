@@ -34,12 +34,74 @@ export const site = {
   ],
   about: {
     portrait: { src: asset('/images/about-portrait.png'), alt: 'Portrait of Atefeh Etemadipour' },
-    paragraphs: [
-      "I'm a UX/UI designer based in Stockholm with a background in industrial engineering and over four years of experience in sales and customer relations. This combination allows me to approach design with both analytical thinking and a deep understanding of user needs, business goals, and customer behavior.",
-      'My journey into UX started with a passion for problem-solving and creating intuitive, user-centered digital experiences. Since then, I’ve worked on a range of real-world and academic projects, including designing and developing landing pages and digital platforms, where I focused on clarity, accessibility, and creating low-friction user experiences.',
-      'I have hands-on experience in user research, wireframing, prototyping, and usability testing, and I enjoy turning insights into practical and meaningful design solutions. I also bring frontend knowledge (HTML, CSS, JavaScript, and React), which helps me bridge the gap between design and development.',
-      'I have completed my UX Design with Frontend Competence studies at Chas Academy in June 2026. Alongside my studies, I continuously explore new tools and technologies, including AI-assisted design workflows, to improve efficiency and creativity in my process.',
-      'My focus is on creating intuitive and meaningful digital experiences that balance user needs with business impact. I enjoy collaborating in cross-functional teams and thrive in environments driven by innovation and continuous learning.',
+    title: 'From idea to shipped product',
+    intro:
+      'I’m a UX/UI Designer with frontend competence and Co-Founder of Taptrigg, based in Stockholm. I turn ideas into working products — from user research and product strategy through UX/UI design and prototyping to frontend implementation — creating digital experiences that are intuitive, accessible and aligned with business goals.',
+    facts: [
+      { label: 'Based in', value: 'Stockholm, Sweden' },
+      { label: 'Currently', value: 'UX/UI Designer at Techlove' },
+      { label: 'Founded', value: 'Co-Founder of Taptrigg' },
+      { label: 'Education', value: 'Chas Academy, 2026' },
+    ],
+    story: [
+      {
+        kicker: 'Now',
+        heading: 'Building products end to end',
+        body: [
+          'At Taptrigg, a QR-based engagement platform for conferences, kickoffs and company events, I have been part of the entire product journey: identifying the problem, validating the idea, designing the experience, building the MVP and launching it with real users.',
+          'As a UX/UI Designer at Techlove, I work on client projects — website redesigns, design systems and product interfaces — collaborating closely with developers and stakeholders to deliver solutions that are scalable and user-centered.',
+        ],
+      },
+      {
+        kicker: 'Background',
+        heading: 'A business lens on design',
+        body: [
+          'Before moving into UX, I spent more than four years in sales and CRM, building on a background in industrial engineering. That experience taught me how customers think, decide and communicate, and it still shapes how I balance user needs with business impact.',
+          'I graduated in UX Design with Frontend Competence from Chas Academy in 2026.',
+        ],
+      },
+      {
+        kicker: 'How I work',
+        heading: 'Collaborative, curious, fast',
+        body: [
+          'I thrive in cross-functional teams, enjoy learning new technologies, and use AI-assisted workflows to move from idea to tested prototype faster — without compromising the user experience.',
+        ],
+      },
+    ],
+    skillGroups: [
+      {
+        group: 'UX/UI Design',
+        items: [
+          'UX/UI Design',
+          'Wireframing',
+          'Rapid Prototyping',
+          'Design Systems',
+          'Accessibility (WCAG)',
+          'Usability Testing',
+          'Iteration',
+        ],
+      },
+      {
+        group: 'Research & Strategy',
+        items: [
+          'User Research',
+          'User Interviews',
+          'Surveys',
+          'Qualitative & Quantitative Research',
+          'Personas',
+          'Competitive Analysis',
+          'SWOT',
+          'Business Research',
+        ],
+      },
+      {
+        group: 'Frontend',
+        items: ['Frontend Development', 'HTML/CSS', 'JavaScript', 'React'],
+      },
+      {
+        group: 'Tools & AI',
+        items: ['Figma', 'Miro', 'Claude Code', 'Claude Design', 'UX Pilot', 'Stitch'],
+      },
     ],
   },
 }
