@@ -58,6 +58,10 @@ export interface ProjectSection {
   images?: ProjectImage[]
   imageColumns?: 2 | 3
   imageFrame?: boolean
+  /** Show the images as a swipeable one-at-a-time carousel */
+  carousel?: boolean
+  /** Pin the images and stack them one by one as the page scrolls (width ÷ height of the images) */
+  scrollStack?: number
   videos?: ProjectVideo[]
   embedUrl?: string
 }
@@ -730,6 +734,253 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: 'metis',
+    title: 'Metis',
+    tagline: 'A Brand and Website for an AI Debugging Agent',
+    subtitle:
+      'At Techlove, I shaped how Metis looks, speaks and launches — from the website in Figma to a full design system, graphic profile and social launch campaign.',
+    category: 'AI Product · Website & Brand',
+    summary:
+      'Metis is Techlove’s autonomous debugging agent: it catches a production error, finds the root cause, writes the fix and opens the pull request. I designed its website, design system, brand guidelines and launch campaign.',
+    hero: {
+      src: asset('/images/metis/metis-devices.jpg'),
+      alt: 'The Metis website shown on a laptop and a phone: From error to fix. Automatically.',
+    },
+    tags: [
+      'Website Design',
+      'Design System',
+      'Brand Identity',
+      'Figma',
+      'React',
+      'Social Media',
+    ],
+    period: 'April – September 2026',
+    liveDemo: 'https://getmetis.se',
+    facts: [
+      { label: 'Role', value: 'UX/UI Designer at Techlove' },
+      { label: 'Client', value: 'Metis — a Techlove product' },
+      { label: 'Scope', value: 'Website, design system, brand, social' },
+      { label: 'Tools', value: 'Figma · Figma MCP · Claude Code · React' },
+    ],
+    sections: [
+      {
+        kicker: 'Overview',
+        heading: 'Making an AI agent feel trustworthy to engineers',
+        body: [
+          'Metis is an autonomous debugging agent built by Techlove. When something breaks in production, it reads the error, traces the root cause through the codebase, writes a fix, runs the tests and opens a pull request — ready for a developer to review.',
+          'The audience is engineers: sceptical, technical and allergic to hype. My job was to give Metis a visual language and a voice that earn trust through clarity and precision, and to carry that consistently from the website to every post on social media.',
+        ],
+        quote: 'From error to fix. Automatically.',
+      },
+      {
+        kicker: 'Process',
+        heading: 'From website to a complete brand',
+        timeline: [
+          {
+            phase: 'Website design in Figma',
+            detail:
+              'Designed the marketing site in two directions — a dense, terminal-inspired version and a bolder “arcade” version with a pixel display typeface that matches the logo.',
+          },
+          {
+            phase: 'Design system',
+            detail:
+              'Codified both versions into one design system: colour and type tokens, spacing, radii, shadows and core components such as buttons, chips, cards, steps and the terminal window.',
+          },
+          {
+            phase: 'Coded foundation & hand-off',
+            detail:
+              'Coded the foundation of the website in React and TypeScript — the core layout and components, built on the design tokens — and handed it over to the developers, who continued building the live site from it.',
+          },
+          {
+            phase: 'Graphic profile',
+            detail:
+              'Expanded the system into full brand guidelines — logo rules, colour, typography, photography, voice and tone, accessibility and ready-made templates.',
+          },
+          {
+            phase: 'Social launch',
+            detail:
+              'Designed the launch package: a LinkedIn carousel, Facebook and LinkedIn covers and profile images, in Swedish and English.',
+          },
+        ],
+      },
+      {
+        kicker: 'What I Brought to the Team',
+        heading: 'A faster path from design to code',
+        highlight: true,
+        wide: true,
+        body: [
+          'I set up an AI-assisted workflow that made the whole process unusually fast, from the first sketches to a working website. By connecting Figma to Claude Code through the Figma MCP server, Claude Code could read my designs directly — layout, colours, type and components — and turn them into React code that matched the Figma file.',
+          'Instead of handing the developers static mockups, I delivered a working code base for the website, built on the design system, so they could start from real components and continue building straight away.',
+        ],
+        cards: [
+          {
+            title: 'Speed from day one',
+            description:
+              'AI-assisted design and build took Metis from first idea to a working website far faster than a traditional design-then-develop hand-off.',
+          },
+          {
+            title: 'Figma MCP + Claude Code',
+            description:
+              'Designs flowed straight from Figma into code, keeping colours, spacing and components identical to what was designed.',
+          },
+          {
+            title: 'Code, not just mockups',
+            description:
+              'The developers received a working React and TypeScript foundation instead of a static design file to rebuild from scratch.',
+          },
+          {
+            title: 'One source of truth',
+            description:
+              'Shared design tokens kept Figma and the code in sync, so design and development spoke the same language.',
+          },
+        ],
+      },
+      {
+        kicker: 'Website',
+        heading: 'Showing the agent at work',
+        wide: true,
+        body: [
+          'The site tells the story the way Metis works: an error comes in, the agent analyses the trace, applies a fix and syncs a pull request. A live-looking terminal log makes each step concrete, and the problem section names the pain engineers already feel — fragmented tools, slow debugging and manual workflows.',
+        ],
+        images: [
+          {
+            src: asset('/images/metis/site-how-it-works.jpg'),
+            alt: 'Metis website: four steps from Error Detected to Sync PR above a terminal log of the agent at work',
+            caption: 'How it works — four steps, made concrete with a live-looking agent log.',
+          },
+          {
+            src: asset('/images/metis/site-problem.jpg'),
+            alt: 'Metis website problem cards: Fragmented Tools, Slow Debugging and Manual Workflows',
+            caption: 'The problem, in the engineers’ own terms — with numbers instead of adjectives.',
+          },
+          {
+            src: asset('/images/metis/site-platform.jpg'),
+            alt: 'Metis website section: Beyond bug fixing. Build any workflow, with six feature cards',
+            caption: 'The agent platform — six features in a calm, scannable grid.',
+          },
+        ],
+        scrollStack: 1440 / 940,
+      },
+      {
+        kicker: 'Design Principles',
+        heading: 'Rules that keep the brand consistent',
+        cards: [
+          {
+            title: 'The neon is a laser',
+            description:
+              'The signature neon green is used for one highlight at a time — a button, a line, a glow — never for large surfaces.',
+          },
+          {
+            title: 'Specific over hype',
+            description:
+              'Real numbers, real log lines, real file names. “The average bug takes 4 hours. Metis does it in 45 seconds.”',
+          },
+          {
+            title: 'Three typefaces, three jobs',
+            description:
+              'Inter for reading, JetBrains Mono when the product “speaks”, and the pixel face Jersey 10 for rare, bold headlines.',
+          },
+          {
+            title: 'Dark, calm and accessible',
+            description:
+              'A carbon-dark palette with measured WCAG contrast, no decorative textures and sentence case everywhere.',
+          },
+        ],
+      },
+      {
+        kicker: 'Design System & Graphic Profile',
+        heading: 'One system for every surface',
+        wide: true,
+        body: [
+          'I documented everything in a living brand guide with 14 chapters — from logo and colour to motion, voice and accessibility — plus design tokens for both code and Figma, and templates for social posts, presentations and email signatures.',
+        ],
+        images: [
+          {
+            src: asset('/images/metis/brand-color.jpg'),
+            alt: 'Brand guide colour chapter: neon, teal and green-ink accents and the ink surface stack',
+            caption: 'Colour — one neon accent, a four-step ink stack and measured contrast ratios.',
+          },
+          {
+            src: asset('/images/metis/brand-logo.jpg'),
+            alt: 'Brand guide logo chapter: pixel wordmark on dark, photography and neon, and the pixel M mark',
+            caption: 'Logo — the pixel wordmark and the pixel M, with clear rules for each.',
+          },
+        ],
+        imageColumns: 2,
+        imageFrame: true,
+      },
+      {
+        kicker: 'Logo Exploration',
+        heading: 'A playful twist on the wordmark',
+        body: [
+          'I also explored a second wordmark with a mirrored “e” — M-ɘ-t-i-s — keeping every other pixel exactly on the original grid, so both versions work interchangeably in a layout.',
+        ],
+        images: [
+          {
+            src: asset('/images/metis/logo-exploration.jpg'),
+            alt: 'The original Metis pixel wordmark beside the version with a reversed e, in neon and white',
+            caption: 'Original wordmark (left) and the reversed-e variant (right).',
+          },
+        ],
+      },
+      {
+        kicker: 'Social Launch',
+        heading: 'A LinkedIn carousel: “From error to fix”',
+        wide: true,
+        body: [
+          'For the launch I designed a six-slide LinkedIn carousel in Swedish that walks through the problem, how the agent works and where humans stay in control — ending with a clear call to action. Each slide uses a single neon highlight, graded photography and the terminal motif from the website.',
+        ],
+        images: [
+          { src: asset('/images/metis/carousel-01.jpg'), alt: 'Carousel slide 1: Metis tar nästa bugg' },
+          { src: asset('/images/metis/carousel-02.jpg'), alt: 'Carousel slide 2: En bugg ska inte behöva vänta, over an error trace' },
+          { src: asset('/images/metis/carousel-03.jpg'), alt: 'Carousel slide 3: Det mesta är inte själva kodändringen' },
+          { src: asset('/images/metis/carousel-04.jpg'), alt: 'Carousel slide 4: Metis gör grovjobbet, with the five agent steps' },
+          { src: asset('/images/metis/carousel-05.jpg'), alt: 'Carousel slide 5: Vi automatiserar arbetet – inte beslutet' },
+          { src: asset('/images/metis/carousel-06.jpg'), alt: 'Carousel slide 6: Låt Metis ta nästa bugg, with a call to action' },
+        ],
+        carousel: true,
+      },
+      {
+        kicker: 'Social Profiles',
+        heading: 'Covers built for every crop',
+        wide: true,
+        body: [
+          'I designed the Facebook and LinkedIn profile images and page covers in Swedish and English, checking each platform’s current specs so the logo and headline stay inside the area that is visible on both desktop and mobile.',
+        ],
+        images: [
+          {
+            src: asset('/images/metis/cover-linkedin.jpg'),
+            alt: 'LinkedIn cover: The average bug takes 4 hours. Metis does it in 45 seconds, beside a live log',
+            caption: 'LinkedIn page cover.',
+          },
+          {
+            src: asset('/images/metis/cover-facebook-nightshift.jpg'),
+            alt: 'Facebook cover: Your stack, on night shift',
+            caption: 'Facebook cover — “Your stack, on night shift.”',
+          },
+          {
+            src: asset('/images/metis/cover-facebook-pipeline.jpg'),
+            alt: 'Facebook cover: From error to fix. Automatically, with the four pipeline steps',
+            caption: 'Facebook cover — the four-step pipeline.',
+          },
+        ],
+        scrollStack: 1640 / 720,
+      },
+      {
+        kicker: 'Outcome',
+        heading: 'A brand ready to launch',
+        body: [
+          'Metis now has a live website at getmetis.se, a documented design system and graphic profile, and a complete social launch kit in two languages — so everything the team publishes looks and sounds like the same product.',
+        ],
+        bullets: [
+          'Designing for a technical audience means proving, not promising.',
+          'A strict system — one accent, three typefaces, clear rules — makes a brand faster to apply, not slower.',
+          'Documenting decisions turns a website into a brand the whole team can use.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'holistal',
     title: 'Holistal',
     tagline: 'A Calm, Private Space for Workplace Wellbeing',
@@ -1038,6 +1289,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'volunteer-portal',
+    more: true,
     title: 'Volunteer Portal',
     tagline: 'A Digital Platform That Strengthens Local Communities',
     subtitle:
