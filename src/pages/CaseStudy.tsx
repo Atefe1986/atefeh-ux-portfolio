@@ -118,11 +118,13 @@ export default function CaseStudy() {
             }
           >
             <section
-              className={
-                section.highlight
-                  ? 'grid gap-10 rounded-2xl border border-line bg-surface/70 p-8 sm:p-12 lg:grid-cols-[1fr_2fr]'
-                  : 'grid gap-10 lg:grid-cols-[1fr_2fr]'
-              }
+              className={[
+                'grid',
+                section.wide ? 'gap-6' : 'gap-10 lg:grid-cols-[1fr_2fr]',
+                section.highlight && 'rounded-2xl border border-line bg-surface/70 p-8 sm:p-12',
+              ]
+                .filter(Boolean)
+                .join(' ')}
             >
               <div>
                 {section.kicker && (
@@ -286,6 +288,29 @@ export default function CaseStudy() {
                       </span>
                     </span>
                   </a>
+                )}
+                {section.videos && (
+                  <div className="mt-8 grid items-start gap-6 sm:grid-cols-3">
+                    {section.videos.map((video) => (
+                      <figure key={video.src} className="m-0">
+                        <video
+                          src={video.src}
+                          poster={video.poster}
+                          controls
+                          playsInline
+                          preload="none"
+                          aria-label={video.title}
+                          className="aspect-[4/5] w-full rounded-xl border border-line bg-surface object-cover shadow-[0_16px_40px_rgba(25,28,31,0.14)]"
+                        />
+                        <figcaption className="mt-3 text-sm leading-relaxed">
+                          <span className="font-medium text-ink">{video.title}</span>
+                          {video.caption && (
+                            <span className="block text-ink-faint">{video.caption}</span>
+                          )}
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
                 )}
                 {section.images && (
                   <div

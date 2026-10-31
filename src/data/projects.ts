@@ -6,6 +6,13 @@ export interface ProjectImage {
   caption?: string
 }
 
+export interface ProjectVideo {
+  src: string
+  poster: string
+  title: string
+  caption?: string
+}
+
 export interface ProjectMetric {
   value: string
   label: string
@@ -38,6 +45,8 @@ export interface ProjectSection {
   kicker?: string
   heading: string
   highlight?: boolean
+  /** Stack the heading above full-width content instead of using two columns */
+  wide?: boolean
   body?: string[]
   bullets?: string[]
   quote?: string
@@ -49,6 +58,7 @@ export interface ProjectSection {
   images?: ProjectImage[]
   imageColumns?: 2 | 3
   imageFrame?: boolean
+  videos?: ProjectVideo[]
   embedUrl?: string
 }
 
@@ -66,11 +76,399 @@ export interface Project {
   liveDemo?: string
   prototypeUrl?: string
   figmaFileUrl?: string
+  /** Shown as a full-width card above the project grid on the home page */
+  featured?: boolean
+  /** Hidden behind the "Show more projects" button on the home page */
+  more?: boolean
   facts?: ProjectFact[]
   sections: ProjectSection[]
 }
 
 export const projects: Project[] = [
+  {
+    slug: 'taptrigg',
+    featured: true,
+    title: 'Taptrigg',
+    tagline: 'Turning Event Guests into Participants',
+    subtitle:
+      'I co-founded Taptrigg and took it from idea to a live, payment-ready product — sketching every screen in Figma, building the frontend with Claude Code, and producing the launch campaign myself with AI.',
+    category: 'Startup · Product, UX/UI & Frontend',
+    summary:
+      'A QR-based engagement platform for company events. Guests scan, play and capture the day — no app, no account — while organisers get every photo in one gallery. I led it from problem to launch — designing in Figma, building the frontend with Claude Code and producing the launch campaign with AI.',
+    hero: {
+      src: asset('/images/taptrigg/taptrigg-devices.jpg'),
+      alt: 'Taptrigg shown on three devices: the marketing website on a monitor, the host panel gallery on a laptop and the guest app on a phone',
+    },
+    tags: [
+      'Product Strategy',
+      'UX/UI Design',
+      'Figma',
+      'Claude Code',
+      'Frontend Development',
+      'Mobile-first PWA',
+      'AI Video & Social',
+    ],
+    period: 'June 2026 – Present',
+    liveDemo: 'https://taptrigg.com',
+    facts: [
+      { label: 'Role', value: 'Co-Founder · Product, UX/UI & Frontend' },
+      { label: 'Team', value: 'Me + a technical partner (backend & cloud)' },
+      { label: 'Products', value: 'Guest app, host panel, marketing site' },
+      { label: 'Tools', value: 'Figma · Claude Code · React · TypeScript' },
+    ],
+    sections: [
+      {
+        kicker: 'The Problem',
+        heading: 'Two hundred cameras in the room — none working for the organiser',
+        body: [
+          'Companies invest heavily in conferences, kickoffs and customer events, yet usually capture only one corner of the room: a single photographer, one angle, hundreds of missed moments. Meanwhile every attendee carries a camera that nobody has asked them to use.',
+          'The second problem is participation. A kickoff is booked to connect departments, but people stay at their own table, on their own phone. The tools that could help ask guests to download an app, create an account and learn an interface before the first coffee break — and at a three-hour event, that friction is fatal.',
+        ],
+        metrics: [
+          { value: '1', label: 'Photographer — one angle, one room' },
+          { value: '200', label: 'Cameras already in the room' },
+          { value: '0', label: 'Of them working for the organiser' },
+        ],
+        quote: 'Collecting photos is not enough. People need a reason to take part.',
+      },
+      {
+        kicker: 'My Role',
+        heading: 'From identifying the problem to shipping the product',
+        highlight: true,
+        body: [
+          'As co-founder I owned the product and everything the user touches. My technical partner built the platform underneath — the API, the image pipeline, the ML scoring and the cloud infrastructure. Everything was built in-house; no agency touched the product, the brand or the code.',
+        ],
+        cards: [
+          {
+            title: 'Product & strategy',
+            items: [
+              'Problem framing and idea validation',
+              'Positioning for company events',
+              'Pricing tiers and go-to-market',
+            ],
+          },
+          {
+            title: 'UX/UI design',
+            items: [
+              'Guest app, host panel and website',
+              'User flows, prototypes and device testing',
+              'Privacy and consent experience',
+            ],
+          },
+          {
+            title: 'Frontend development',
+            items: [
+              'Built from my Figma designs with Claude Code',
+              'Three React + TypeScript web apps',
+              'Mobile-first camera and gallery',
+            ],
+          },
+          {
+            title: 'Brand & launch',
+            items: [
+              'Logo, visual identity and share cards',
+              'Launch videos and LinkedIn posts, made with AI',
+              'Pitch deck for investors',
+            ],
+          },
+        ],
+      },
+      {
+        kicker: 'Process',
+        heading: 'Idea to live product, step by step',
+        body: [
+          'We did not stop at a prototype. The aim was a product that could run a real event — so every phase ended with something we could put in front of people.',
+        ],
+        timeline: [
+          {
+            phase: 'Idea',
+            detail:
+              'Framed the problem from the organiser’s side, studied what they do today — a hired photographer, a shared album nobody uploads to, or nothing at all — and found the gap: engagement.',
+          },
+          {
+            phase: 'Prototype',
+            detail:
+              'Sketched the guest and organiser flows in Figma and tested them on real phones, focusing on one question: does it make sense in seconds?',
+          },
+          {
+            phase: 'Build',
+            detail:
+              'Turned the Figma designs into the guest PWA, the host panel and the marketing site with Claude Code, in React and TypeScript — while the product team built the backend in parallel.',
+          },
+          {
+            phase: 'Deploy',
+            detail:
+              'Worked closely with our product team, who owned the backend and cloud infrastructure, to launch the complete product — guest app, host panel, payments and photo processing — on AWS in Stockholm, keeping all data within the EU.',
+          },
+          {
+            phase: 'Live run',
+            detail:
+              'Ran the complete flow end to end at a real party, on around fifteen guests’ own phones.',
+          },
+        ],
+      },
+      {
+        kicker: 'AI-Assisted Workflow',
+        heading: 'Sketched in Figma. Built with Claude Code.',
+        highlight: true,
+        wide: true,
+        body: [
+          'I started every part of the product in Figma — mapping the full guest and organiser journey as screens before writing any code. Once a flow made sense on the canvas, I used Claude Code as my development partner to turn those designs into working React and TypeScript, then tested the result on real phones and refined it directly in code.',
+          'This let one designer move from sketch to a shipped, production product at the speed of a small team — while keeping every pixel and interaction decision in my own hands.',
+        ],
+        timeline: [
+          {
+            phase: 'Sketch in Figma',
+            detail: 'The whole flow first — every screen of the guest app and host panel on one canvas.',
+          },
+          {
+            phase: 'Build with Claude Code',
+            detail:
+              'I described the design and behaviour; Claude Code helped me write the components, which I reviewed and shaped.',
+          },
+          {
+            phase: 'Test and refine',
+            detail:
+              'Tried each change on real devices and polished spacing, copy and interactions directly in the code.',
+          },
+        ],
+        images: [
+          {
+            src: asset('/images/taptrigg/figma-latest.jpg'),
+            alt: 'The latest Taptrigg Figma file: guest join, event details, camera and QR sharing screens, plus iterations of the progress card, invite friends and Earn points flows',
+            caption:
+              'The latest version in Figma — guest join, event details, camera and sharing, alongside iterations of the progress card, invites and the Earn points flow.',
+          },
+        ],
+        imageFrame: true,
+      },
+      {
+        kicker: 'Design Principles',
+        heading: 'Four rules that shaped every screen',
+        cards: [
+          {
+            title: 'Zero friction',
+            description:
+              'Scan a QR code and you are in. No app to download, no account to create — everything runs in the browser.',
+          },
+          {
+            title: 'Give people a reason',
+            description:
+              'Every photo earns points. Secret photo missions, a live leaderboard and a prize turn sharing into a game.',
+          },
+          {
+            title: 'The organiser stays in control',
+            description:
+              'A self-serve setup, a live gallery with review states and the whole event as one full-resolution download.',
+          },
+          {
+            title: 'Privacy by design',
+            description:
+              'Data stays in the EU, there is no facial recognition anywhere, and guests can delete their own photos at any time.',
+          },
+        ],
+      },
+      {
+        kicker: 'Host Panel',
+        heading: 'Built for attendees, controlled by the organiser',
+        body: [
+          'Organisers set up and run everything themselves. A six-step wizard creates the event and takes payment through Stripe; the host writes the secret missions, follows uploads live, reviews what is shared and downloads the whole event as one ZIP. A printable QR poster includes the photography notice for the venue.',
+        ],
+        images: [
+          {
+            src: asset('/images/taptrigg/host-gallery.png'),
+            alt: 'Host panel gallery for Nordvik Kickoff 2026 with review filters and a Download photos button',
+            caption: 'The host gallery — filter by review state and download everything in one go.',
+          },
+        ],
+        imageFrame: true,
+      },
+      {
+        kicker: 'Guest Experience',
+        heading: 'Scan. Join. Play. Enjoy.',
+        body: [
+          'At a real event, a guest gives the product a few seconds of attention — so the whole experience is designed to make sense in that time. One screen to join, one tap to take a photo, and a home screen that always answers “how am I doing?”.',
+        ],
+        images: [
+          {
+            src: asset('/images/taptrigg/guest-join.png'),
+            alt: 'Join screen for Nordvik Kickoff 2026 with a single field and a Join Event button',
+            caption: 'Join in seconds — no login, with privacy information up front.',
+          },
+          {
+            src: asset('/images/taptrigg/guest-event-home.png'),
+            alt: 'Event home screen showing points, rank, prize and the top guests leaderboard',
+            caption: 'Points, rank and the prize, always one glance away.',
+          },
+          {
+            src: asset('/images/taptrigg/guest-gallery.png'),
+            alt: 'Shared event gallery with photos from different guests and points earned',
+            caption: 'One shared gallery — every angle of the day in one place.',
+          },
+        ],
+        imageColumns: 3,
+      },
+      {
+        kicker: 'Engagement Loop',
+        heading: 'Points for more than photos',
+        body: [
+          'Uploading alone is not enough to keep people involved. Guests also earn points for reviewing others’ photos — which keeps the gallery safe and relevant — and the biggest rewards go to inviting colleagues, so the product spreads through the room on its own.',
+        ],
+        images: [
+          {
+            src: asset('/images/taptrigg/guest-review.png'),
+            alt: 'Review photo screen with Verify and Report buttons',
+            caption: 'Guests help moderate — verify or report a photo.',
+          },
+          {
+            src: asset('/images/taptrigg/guest-invite.png'),
+            alt: 'Invite guests screen with a QR code and a Share Link button',
+            caption: 'Inviting others earns the most points.',
+          },
+        ],
+        imageColumns: 3,
+      },
+      {
+        kicker: 'User Testing & Iteration',
+        heading: 'Shaped by our users — and still evolving',
+        wide: true,
+        body: [
+          'Taptrigg is in active development, and every release is shaped by the people who use it. We test on real phones in real event conditions, watch how guests and organisers actually behave, and turn their feedback into the next iteration.',
+        ],
+        bullets: [
+          'Hands-on tests on guests’ own phones, at real events',
+          'Watching where people hesitate — then asking them why',
+          'Small, frequent releases, so each round of feedback quickly reaches the product',
+        ],
+        outro: [
+          'The “Earn points” feature shows how this works in practice. Based on what we learned from users, it went through three versions before becoming the one in the app today.',
+        ],
+        images: [
+          {
+            src: asset('/images/taptrigg/earn-points-v1.jpg'),
+            alt: 'Version 1: a floating menu with Invite Friends, Upload Photo and Review Photos buttons above an Earn Points button',
+            caption:
+              'Version 1 — A floating menu. Playful, but the ways to earn were hidden behind a button and covered the content guests came to see.',
+          },
+          {
+            src: asset('/images/taptrigg/earn-points-v2.jpg'),
+            alt: 'Version 2: an Earn points bottom sheet listing three actions and their points',
+            caption:
+              'Version 2 — A bottom sheet. Clearer, with points spelled out for each action, but it took over the screen and pulled attention away from the event.',
+          },
+          {
+            src: asset('/images/taptrigg/earn-points-v3.jpg'),
+            alt: 'Version 3: the live event home with an always-visible Take Photo button and an Earn more points drawer',
+            caption:
+              'Version 3 (live today) — “Take Photo” is always visible as the main action, and the other ways to earn sit in a light pull-up drawer.',
+          },
+        ],
+        imageColumns: 3,
+      },
+      {
+        kicker: 'User Testing · Host Panel',
+        heading: 'A bigger QR code, one click away',
+        wide: true,
+        body: [
+          'Organisers wanted to show the QR code on their laptop or a big screen so guests could join right away — but the small code in the dashboard was hard to scan. Now the host clicks the code to open a large version, with the join link and a “Copy link” button.',
+        ],
+        images: [
+          {
+            src: asset('/images/taptrigg/host-qr-card.jpg'),
+            alt: 'Host dashboard with a Guest Access card showing a small QR code with a zoom icon',
+            caption: 'The Guest Access card — the QR code now shows a zoom hint, inviting the host to tap it.',
+          },
+          {
+            src: asset('/images/taptrigg/host-qr-enlarged.jpg'),
+            alt: 'Scan to join dialog with a large QR code, the join link, a Copy link button and a Done button',
+            caption: 'One tap opens a large “Scan to join” code that works from across the room.',
+          },
+        ],
+        imageColumns: 2,
+        imageFrame: true,
+      },
+      {
+        kicker: 'Frontend',
+        heading: 'Designing it, then building it',
+        body: [
+          'I built the frontend of all three products myself — from my Figma designs, with Claude Code — in React, TypeScript and Vite. Design decisions never got lost in hand-off: when something felt wrong on a real phone, I could fix it the same day.',
+        ],
+        bullets: [
+          'A mobile-first in-app camera with pinch-to-zoom and flash, plus clear error messages when the camera is unavailable',
+          'A self-serve host panel: event wizard, dashboard, live gallery, leaderboard and an admin mode',
+          'A bilingual marketing site (Swedish / English) with cookieless analytics for funnel insights',
+          'Privacy built into the UI: cookie consent, guest rights, self-hosted fonts and photography with no third-party requests',
+        ],
+        metrics: [
+          { value: '180+', label: 'Commits I authored' },
+          { value: '3', label: 'Web apps designed and built' },
+          { value: '2', label: 'Languages supported' },
+          { value: '~15', label: 'Guests in the first live run' },
+        ],
+      },
+      {
+        kicker: 'AI-Produced Campaign',
+        heading: 'Launch videos and LinkedIn posts — made by me, with AI',
+        highlight: true,
+        wide: true,
+        body: [
+          'We sell to the person who already owns the event budget — event, HR and communications leads at Swedish companies. Instead of hiring an agency, I produced the whole launch campaign myself using AI: every promo video, LinkedIn post and share card.',
+          'I scripted and art-directed each piece, then used Claude Code to build the videos as code-based motion compositions — which made it easy to render every cut in Swedish and English and in each social format (4:5, 1:1 and 9:16) from one source.',
+        ],
+        videos: [
+          {
+            src: asset('/videos/taptrigg/launch-video.mp4'),
+            poster: asset('/videos/taptrigg/launch-video-poster.jpg'),
+            title: 'Launch video',
+            caption: 'The problem and the product in 20 seconds.',
+          },
+          {
+            src: asset('/videos/taptrigg/logo-intro.mp4'),
+            poster: asset('/videos/taptrigg/logo-intro-poster.jpg'),
+            title: 'Logo intro',
+            caption: 'The animated brand mark — “Bring engagement to every event.”',
+          },
+          {
+            src: asset('/videos/taptrigg/ecosystem-promo.mp4'),
+            poster: asset('/videos/taptrigg/ecosystem-promo-poster.jpg'),
+            title: 'Product promo',
+            caption: 'From the live leaderboard to one-click download.',
+          },
+        ],
+        images: [
+          {
+            src: asset('/images/taptrigg/campaign-sv.jpg'),
+            alt: 'Swedish version of the Taptrigg LinkedIn campaign for company events',
+            caption: 'LinkedIn campaign, Swedish version.',
+          },
+          {
+            src: asset('/images/taptrigg/share-card.jpg'),
+            alt: 'Taptrigg social share card: Join the event. Share your photos.',
+            caption: 'Share card for guests who pass on the join link.',
+          },
+        ],
+        imageColumns: 2,
+      },
+      {
+        kicker: 'Validation',
+        heading: 'Built, deployed and run with real guests',
+        body: [
+          'In the first live run, photos went from guests’ phones to the live leaderboard while the party was still going — and guests kept shooting to earn points without being asked to. That was the behaviour we designed for.',
+          'We have not yet run a large event — a conference or company kickoff, the customers we sell to. That is the next milestone, and the product keeps getting better with every round of user feedback along the way.',
+        ],
+      },
+      {
+        kicker: 'Reflection',
+        heading: 'What building a product taught me',
+        bullets: [
+          'Owning both design and frontend removes the gap between what is designed and what ships.',
+          'Testing on real phones, in real conditions, finds problems no prototype will.',
+          'Privacy and trust are design work, not just legal text — especially when selling to companies.',
+          'A startup forces you to connect every design decision to a business outcome.',
+        ],
+      },
+    ],
+  },
   {
     slug: 'techlove',
     title: 'Techlove',
@@ -932,6 +1330,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'kiddolink',
+    more: true,
     title: 'Kiddolink',
     tagline: 'All-in-One App for Parent–Preschool Communication',
     subtitle:
@@ -1056,6 +1455,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'luminova',
+    more: true,
     title: 'Luminova',
     tagline: 'Smarter Shopping for Modern Lighting',
     subtitle:
