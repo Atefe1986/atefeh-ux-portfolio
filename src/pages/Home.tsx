@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 import Reveal from '../components/Reveal'
 import SectionHeading from '../components/SectionHeading'
 import ProjectCard from '../components/ProjectCard'
@@ -99,33 +98,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About */}
-      <section className="border-y border-line bg-surface/50">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 lg:grid-cols-[2fr_3fr]">
-          <Reveal>
-            <SectionHeading id="about" kicker="About Me" title="Design with an analytical mind" />
-            <img
-              src={site.about.portrait.src}
-              alt={site.about.portrait.alt}
-              loading="lazy"
-              className="mx-auto w-full max-w-sm rounded-xl lg:mx-0"
-            />
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="space-y-5 text-base leading-relaxed text-ink-soft">
-              {site.about.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 32)}>{paragraph}</p>
-              ))}
-            </div>
-            <Link
-              to="/resume"
-              className="mt-8 inline-block rounded-full border border-ink px-6 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
-            >
-              View my resume
-            </Link>
-          </Reveal>
-        </div>
-      </section>
+      <hr className="border-line" />
 
       {/* Contact */}
       <section className="mx-auto max-w-6xl px-6 py-28">
