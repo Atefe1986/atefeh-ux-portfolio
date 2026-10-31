@@ -94,7 +94,7 @@ export const projects: Project[] = [
       'I co-founded Taptrigg and took it from idea to a live, payment-ready product — sketching every screen in Figma, building the frontend with Claude Code, and producing the launch campaign myself with AI.',
     category: 'Startup · Product, UX/UI & Frontend',
     summary:
-      'A QR-based engagement platform for company events. Guests scan, play and capture the day — no app, no account — while organisers get every photo in one gallery. I led it from problem to launch — designing in Figma, building the frontend with Claude Code and producing the launch campaign with AI.',
+      'A QR-based photo-sharing and engagement platform for company events. Guests scan a code to share their photos and earn points — no app, no account — and organisers get every photo from the day in one shared gallery, ready to download. I led it from problem to launch — designing in Figma, building the frontend with Claude Code and producing the launch campaign with AI.',
     hero: {
       src: asset('/images/taptrigg/taptrigg-devices.jpg'),
       alt: 'Taptrigg shown on three devices: the marketing website on a monitor, the host panel gallery on a laptop and the guest app on a phone',
