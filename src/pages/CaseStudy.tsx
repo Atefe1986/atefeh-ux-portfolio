@@ -1,6 +1,8 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Reveal from '../components/Reveal'
+import ImageCarousel from '../components/ImageCarousel'
+import ScrollStack from '../components/ScrollStack'
 import { getProject, projects } from '../data/projects'
 import { site } from '../data/site'
 import usePageTitle from '../hooks/usePageTitle'
@@ -113,8 +115,8 @@ export default function CaseStudy() {
             key={section.heading}
             className={
               section.highlight
-                ? 'py-8 first:pt-16'
-                : 'border-b border-line py-20 last:border-b-0'
+                ? 'py-6 first:pt-12'
+                : 'border-b border-line py-14 last:border-b-0'
             }
           >
             <section
@@ -312,7 +314,17 @@ export default function CaseStudy() {
                     ))}
                   </div>
                 )}
-                {section.images && (
+                {section.images && section.carousel && (
+                  <ImageCarousel images={section.images} label={section.heading} />
+                )}
+                {section.images && section.scrollStack && (
+                  <ScrollStack
+                    images={section.images}
+                    label={section.heading}
+                    aspectRatio={section.scrollStack}
+                  />
+                )}
+                {section.images && !section.carousel && !section.scrollStack && (
                   <div
                     className={
                       section.imageColumns === 2
