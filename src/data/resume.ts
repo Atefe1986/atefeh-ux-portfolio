@@ -96,7 +96,7 @@ export const resume = {
       context: 'Techlove Internship',
       description:
         'Designed and developed the landing page for Kazify, a gig-economy mobile application that connects service providers with customers in Kenya — similar to Uber but for household services such as cleaning, plumbing, and maintenance.',
-      link: 'https://atefe1986.github.io/atefeh-ux-portfolio/work/kazify',
+      link: 'https://atefehetemadipour.com/work/kazify',
       linkLabel: 'View project',
     },
     {
@@ -104,7 +104,7 @@ export const resume = {
       context: 'Internship',
       description:
         'Developed Techlove’s design system and led the website redesign using AI-assisted tools (Claude, UX Pilot) to streamline design workflows.',
-      link: 'https://atefe1986.github.io/atefeh-ux-portfolio/work/techlove',
+      link: 'https://atefehetemadipour.com/work/techlove',
       linkLabel: 'View project',
     },
     {
@@ -112,7 +112,7 @@ export const resume = {
       context: 'Techlove',
       description:
         'Designed the website, design system, brand guidelines and social launch campaign for Metis, Techlove’s autonomous AI debugging agent. Connected Figma to Claude Code through the Figma MCP to turn the designs into a working React code base, which I handed over to the developers to build the live site.',
-      link: 'https://atefe1986.github.io/atefeh-ux-portfolio/work/metis',
+      link: 'https://atefehetemadipour.com/work/metis',
       linkLabel: 'View project',
     },
     {
@@ -120,7 +120,7 @@ export const resume = {
       context: 'Degree Project',
       description:
         'My degree project (examensarbete) — a five-week collaboration between two UX designers designing the Employee Dashboard MVP for a workplace wellbeing platform. Research-led and privacy-first, taken from UX research and high-fidelity Figma UI to a working, interactive prototype built with Claude Code.',
-      link: 'https://atefe1986.github.io/atefeh-ux-portfolio/work/holistal',
+      link: 'https://atefehetemadipour.com/work/holistal',
       linkLabel: 'View project',
     },
     {
@@ -128,7 +128,7 @@ export const resume = {
       context: 'Course Project',
       description:
         'Designed a mobile-first e-commerce platform for lighting products, with user research, personas, and Figma prototypes, including a design system and usability testing.',
-      link: 'https://atefe1986.github.io/atefeh-ux-portfolio/work/luminova',
+      link: 'https://atefehetemadipour.com/work/luminova',
       linkLabel: 'View case study',
     },
     {
@@ -136,7 +136,7 @@ export const resume = {
       context: 'Course Project',
       description:
         'Developed a parent–preschool communication app with user flows, personas, and Figma prototypes, including a design system and guerrilla usability testing. Used AI-assisted tools (Claude Code & Design, UX Pilot, Stitch, Figma Make) to speed up ideation, generate user stories, and explore multiple design alternatives.',
-      link: 'https://atefe1986.github.io/atefeh-ux-portfolio/work/kiddolink',
+      link: 'https://atefehetemadipour.com/work/kiddolink',
       linkLabel: 'View case study',
     },
     {

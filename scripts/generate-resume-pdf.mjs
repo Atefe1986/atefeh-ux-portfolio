@@ -29,7 +29,7 @@ try {
 
   const browser = await puppeteer.launch({ channel: 'chrome' }).catch(() => puppeteer.launch())
   const page = await browser.newPage()
-  await page.goto(`http://localhost:${PORT}/atefeh-ux-portfolio/resume`, {
+  await page.goto(`http://localhost:${PORT}/resume`, {
     waitUntil: 'networkidle0',
   })
   await page.evaluate(() => document.fonts.ready)
